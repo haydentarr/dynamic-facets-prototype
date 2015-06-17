@@ -1,0 +1,30 @@
+    <h3 class="p-x-sml">Experience &amp; Job Length?</h3>
+    <h5 class="text-muted p-lrg">Select relevant tags to improve your results</h5>
+
+    <div class="oTagSet">
+    <!-- Platform -->
+        <label class="oBtnBox oBtnBoxSocial jsFancyCheckboxItem oPointer" ng-repeat="(experience, key) in searchTags.Tags.experiences" ng-class="{isActive: key}" >
+            <input type="checkbox" ng-model="searchTags.Tags.experiences[experience]" tag-selected>
+            <i class="oImg oSocialImg oIconWindows"></i>
+            <span ng-bind="experience"></span>
+        </label>
+    </div>
+    <!-- Devices 
+    <div class="oTagSet" ng-show="deviceSelected">
+        <label class="oBtnBox oBtnBoxSocial jsFancyCheckboxItem oPointer" ng-repeat="(device, key) in searchTags.Tags.devices" ng-class="{isActive: searchTags.Tags.devices[device]}">
+            <input type="checkbox" ng-model="searchTags.Tags.devices[device]" ng-change="deviceSelect(searchTags.Tags.devices[device])" tag-selected>
+            <i class="oImg oSocialImg oIconWindows"></i>
+            <span ng-bind="device"></span>
+        </label>
+    </div>-->
+    <!-- Environment -->
+    <div class="oTagSet">
+        <label class="oBtnBox oBtnBoxSocial jsFancyCheckboxItem oPointer" ng-repeat="(type, key) in searchTags.Tags.types" ng-class="{isActive: searchTags.Tags.types[type]}">
+            <input type="checkbox" ng-model="searchTags.Tags.types[type]" tag-selected>
+            <i class="oImg oSocialImg oIconWindows"></i>
+            <span ng-bind="type"></span>
+        </label>
+    </div>
+    <div class="p-med">
+        <button class="btn btn-primary" ng-disabled="!nestedObjLength(searchTags.Tags).length" ng-click="tab = 4; dropdownThree = true">Update results</button>
+    </div>

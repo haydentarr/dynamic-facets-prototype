@@ -1,0 +1,1531 @@
+<div class="overlay-container" ng-click="$event.stopPropagation()">
+    <div class="overlay-module">
+        <div id="main" role="main" class="oPageCentered" id="profile">
+             <!--<article class="isNotification profile" ng-show="$state.includes('atsHome.suggestions.profile')">
+                <div class="flex justify-flex align-flex-center">
+                    <div>
+                        <h2 class="oH1 oTxtMega ib txtMiddle np" ng-bind="invitedText || 'Start by inviting 5 freelancers'"></h2>
+                    </div>
+                   <aside class="invited">
+                        <div class="invitedProfile np added">
+                            <img ng-src="{{invitedFreelancers[0].user.image}}"></img>
+                            <span class="oApplicantsIcon"></span>
+                        </div>
+                        <div class="invitedProfile np added">
+                            <img ng-src="{{invitedFreelancers[1].user.image}}"></img>
+                            <span class="oApplicantsIcon"></span>
+                        </div>
+                        <div class="invitedProfile np added">
+                            <img ng-src="{{invitedFreelancers[2].user.image}}"></img>
+                            <span class="oApplicantsIcon"></span>
+                        </div>
+                        <div class="invitedProfile np added">
+                            <img ng-src="{{invitedFreelancers[3].user.image}}"></img>
+                            <span class="oApplicantsIcon"></span>
+                        </div>
+                        <div class="invitedProfile np added">
+                            <img ng-src="{{invitedFreelancers[4].user.image}}"></img>
+                            <span class="oApplicantsIcon"></span>
+                        </div>
+                    </aside>
+                </div>
+            </article>-->
+            <div class="cols oBreadcrumbBar jsBreadcrumbBar oH2Border">
+                <div class="col col2of3">
+                    <a class="oBreadcrumbText oBreadcrumbBack jsLogClickEvent oTxtMed" ng-click="back()">Back to applicants</a> 
+
+                </div>
+                <div class="col col1of3 txtCenter nowrap">
+                    <div id="applicationPaging">
+                        <div class="oBreadcrumbText">
+                            <strong>1</strong>of 11 Applicants <a href="#" class="oBreadcrumbNext jsLogClickEvent" data-event-type="next_applicant" data-sync="true " ng-click="logThis()">Next</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="oLayout oLayoutInfo">
+                <div class="oMain">
+                    <header>
+                        <article class="oContractorInfo oContractorInfoLarge">
+                            <div class="oMed">
+                                <div class="oLeft oPortraitLarge">
+                                    <img alt="Fran H." ng-src="{{user.image}}">
+                                </div>
+                                <div class="oBd">
+                                    <div class="oRight">
+                                        <article id="ApplicationsTerms">
+                                            <strong class="oRateLarge" data-width="240px" data-rel="flyout" data-placement="top bottom" data-content="Freelancer Receives $38.00/hr">
+                                                $<span ng-bind="user.price | number:2"></span>
+                                                <span class="oRateTime">
+                                                    / hr</span>
+                                            </strong>
+                                        </article>
+                                    </div>
+
+
+                                    <hgroup>
+
+                                        <div class="jsContractorTitle" data-user-id="5341051">
+                                            <h1 class="oH1Huge oTightText p" ng-bind="user.name">
+                                            </h1>
+                                            <h2 class="oH2High oContractorInfoTitle p" ng-bind="user.title"></h2>
+
+                                        </div>
+                                        <div class="oMed">
+                                            <i class="oIconLocation oIcon oIconSmall oIconLeft oIconLight"></i>
+                                            <div class="oBd">
+                                                <div class="oRowTitle oTextBoxLiner oTxtMed">
+                                                    <span class="nowrap" ng-bind="user.location"></span>
+                                                </div>
+                                                <div class="oMute">
+                                                    9:20pm local time - 9 hrs ahead</div>
+                                            </div>
+                                        </div>
+                                    </hgroup>
+
+                                    <ul class="oInlineList jsHideWhenEditing">
+                                        <li ng-repeat="skill in user.skills" class="oTag oSkill" ng-bind="skill"></li>
+                                        <li class="oTagMore oMoreRow">
+                                            <strong data-count="15" class="oMore">more...</strong>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </article>
+
+                    </header>
+                    <section id="applicationsDetailsCoverLetter" ng-show="$state.includes('atsHome.applicants.application')">
+                        <h2 class="oH2Lite oHToggle" id="applicationsDetailsCoverLetterToggle">
+                            Cover Letter</h2>
+                        <div class="" id="applicationsDetailsCoverLetterCollapsible">
+
+
+                            <p id="applicationsDetailsCoverLetterText">
+                                <div ng-bind-html="user.description | unsafe"></div>
+                            </p>
+
+                        </div>
+                    </section>
+                    <section id="messageSection" ng-show="user.messaged && activeDay === 3">
+                        <h2 class="oH2Lite">Message</h2>
+
+                        <div id="messageThread" class="">
+                            <div class="cols oMessageThread" data-thread-id="345807034">
+                                <div>
+                                    <section id="threadPosts" class="oList">
+                                        <div class="oBd">
+                                            <article class="cols jsPost oMCMessage" data-id="432497265">
+                                                <div class="col col1of4">
+                                                    <div class="isOther1">Ashu Nagar</div>
+                                                    <div class="oSupportInfo" title="Sun, Oct 12, 2014 at 12:35pm">Oct 12</div>
+                                                </div>
+                                                <div class="col col3of4">
+                                                    <div class="oMCMessagePreview" data-markdown="">Hi Nico Lance Medina, I have read the requirements for this project. I am well skilled in all of the</div>
+                                                    <div class="oMCMessageContent" data-markdown="">Hi Nico Lance Medina,
+                                                        <br>
+                                                        <br>I have read the requirements for this project.
+                                                        <br>
+                                                        <br>I am well skilled in all of these. Please let me know when we can discuss for the project.
+                                                        <br>
+                                                        <br>My skype ID is ashu_nagar
+                                                        <br>
+                                                        <br>
+                                                        <br>
+                                                        <br>
+                                                    </div>
+                                                    <div class="oMCMessageAttachments"></div>
+                                                </div>
+                                            </article>
+                                            <div class="oMCCollapseGroup" style="display:none;">
+                                                <span class="oMCCount"></span>
+                                            </div>
+                                            <article class="jsPost" id="mcInboxReplyPane">
+                                                <form id="inbox_reply_form" class="oFormTop" novalidate="novalidate">
+                                                    <div class="oFormField">
+                                                        <label class="oLabel">Reply to all</label>
+                                                        <textarea name="body" class="oForm"></textarea>
+                                                        <div class="oCountdown oHidden" style="width: 499px;">
+                                                            <span>50000</span>characters left</div>
+                                                    </div>
+                                                    <ul class="oFieldValue oFormLrg oPlainList jsFormAttachments">
+                                                        <li class="oAttachmentAddBlock">
+                                                            <span tabindex="0" class="oLink jsUploadOptions" data-rel="flyout" data-class-name="oModal" data-reveal="#uploadOptionsContainer" data-trigger="click">
+                                                                <strong>+ Attach a file</strong>
+                                                            </span>
+                                                            <aside class="oHidden" id="uploadOptionsContainer">
+                                                                <ul>
+                                                                    <li tabindex="1"></li>
+                                                                    <li tabindex="2">
+                                                                        <div class="oInputFileContainer">
+                                                                            <div class="oInputFileWrapper">
+                                                                                <input class="ignored" type="file" name="attachment" data-target="image_uploader_1">
+                                                                            </div>
+                                                                            <div class="jsAttachmentAddItem">Upload a file</div>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li tabindex="3" class="jsDropbox">
+                                                                        <div>Share via dropbox</div>
+                                                                    </li>
+                                                                </ul>
+                                                            </aside>
+                                                            <div class="oDropHere isHidden">
+                                                                <div>
+                                                                    <span class="oTxtMega">Drop File Here</span>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="oAttachmentUploading isHidden">
+                                                            <div class="oLoadingSmallInline"></div>
+                                                            <a class="oBtnCloseAttachment txtMiddle jsAttachmentCancel" href="#" title="Cancel"></a>
+                                                        </li>
+                                                    </ul>
+                                                    <button type="submit" class="oBtn oBtnSecondary">Send</button>
+                                                </form>
+                                            </article>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+
+                    </section>
+
+                    <div id="profilePresentation">
+                        <section id="profileOverviewSection">
+                            <h2 class="oH2Lite">Profile Overview</h2>
+
+
+                            <p ng-bind-html="user.description | unsafe"></p>
+
+                        </section>
+
+                        <section class="oListLite" id="profileRecentWorkAndFeedbackSection">
+
+                            <h2 class="oH2Lite">Recent Work History &amp; Feedback
+                            </h2>
+
+                            <section class="oListLite" id="workHistoryList">
+                                <div class="jsSkillTab" data-id="allAssignments">
+
+                                    <section class="oListLite np" id="jsAssignmentsActive">
+                                        <button class="oBtn oBtnToggle isCollapsed jsJobsInProgress">
+                                            5 jobs in progress</button>
+                                        <article class="cols jsAssignment  jsInProgress isHidden" data-rel="9BsNwy6UeontsFPamVNzlsy7E7RtS5MoYTHqpRV2ifo%3D" data-order="0">
+                                            <div class="cols p">
+                                                <div class="col col3of5 oTxtEnlarged">
+                                                    <div class="p">
+                                                        <a class="jsWorkHistoryJobTitle oTxtMed oBtnPopup" href="#">
+                                                            <strong>assist principal programmer in various front-end and back-end activities at mathisasport</strong>
+                                                        </a>
+                                                    </div>
+                                                    <span class="oMute">Job in progress</span>
+                                                </div>
+                                                <div class="col col2of5 txtRight">
+                                                    <ul class="oTightList p">
+                                                        <li class="oTxtMed">
+                                                            <strong>45</strong>
+                                                            <span class="oMute">hours</span>
+                                                        </li>
+                                                        <li class="oTxtMed">
+                                                            <strong>$27.78</strong>
+                                                            <span class="oMute">/hr</span>
+                                                        </li>
+                                                        <li class="oTxtMed">
+                                                            <strong>$1,195</strong>
+                                                            <span class="oMute">earned</span>
+                                                        </li>
+                                                        <li>
+                                                            <div class="oMute">August 2013 - Present</div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="jsDetails isHidden" data-order="0"></div>
+                                            </div>
+                                        </article>
+                                        <article class="cols jsAssignment  jsInProgress isHidden" data-rel="VD6B6KTsX9NnO30hsXOyitpm5tcpxSEIfN4%2BmnYGOVQ%3D" data-order="1">
+                                            <div class="cols p">
+                                                <div class="col col3of5 oTxtEnlarged">
+                                                    <div class="p">
+                                                        <a class="jsWorkHistoryJobTitle oTxtMed oBtnPopup" href="#">
+                                                            <strong>Wordpress Small Tasks</strong>
+                                                        </a>
+                                                    </div>
+                                                    <span class="oMute">Job in progress</span>
+                                                </div>
+                                                <div class="col col2of5 txtRight">
+                                                    <ul class="oTightList p">
+                                                        <li class="oTxtMed">
+                                                            <strong>6</strong>
+                                                            <span class="oMute">hours</span>
+                                                        </li>
+                                                        <li class="oTxtMed">
+                                                            <strong>$35.00</strong>
+                                                            <span class="oMute">/hr</span>
+                                                        </li>
+                                                        <li class="oTxtMed">
+                                                            <strong>$698</strong>
+                                                            <span class="oMute">earned</span>
+                                                        </li>
+                                                        <li>
+                                                            <div class="oMute">April 2014 - Present</div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="jsDetails isHidden" data-order="1"></div>
+                                            </div>
+                                        </article>
+                                        <article class="cols jsAssignment  jsInProgress isHidden" data-rel="%2BDgVUWugEGq5uFy%2FseYJzPeqM8EH034OQv5vSG6mnhk%3D" data-order="2">
+                                            <div class="cols p">
+                                                <div class="col col3of5 oTxtEnlarged">
+                                                    <div class="p">
+                                                        <a class="jsWorkHistoryJobTitle oTxtMed oBtnPopup" href="#">
+                                                            <strong>Wordpress Developer</strong>
+                                                        </a>
+                                                    </div>
+                                                    <span class="oMute">Job in progress</span>
+                                                </div>
+                                                <div class="col col2of5 txtRight">
+                                                    <ul class="oTightList p">
+                                                        <li class="oTxtMed">
+                                                            <strong>542</strong>
+                                                            <span class="oMute">hours</span>
+                                                        </li>
+                                                        <li>
+                                                            <div class="oMute">November 2012 - Present</div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="jsDetails isHidden" data-order="2"></div>
+                                            </div>
+                                        </article>
+                                        <article class="cols jsAssignment  jsInProgress isHidden" data-rel="MDikSdXuzFGWMyJ%2BRTJImVkIfi3mEjKeaUV7R%2BYn7rI%3D" data-order="7">
+                                            <div class="cols p">
+                                                <div class="col col3of5 oTxtEnlarged">
+                                                    <div class="p">
+                                                        <a class="jsWorkHistoryJobTitle oTxtMed oBtnPopup" href="#">
+                                                            <strong>Developer Wanted for eCommerce WordPress Project</strong>
+                                                        </a>
+                                                    </div>
+                                                    <span class="oMute">Job in progress</span>
+                                                </div>
+                                                <div class="col col2of5 txtRight">
+                                                    <ul class="oTightList p">
+                                                        <li class="oTxtMed">
+                                                            <strong>116</strong>
+                                                            <span class="oMute">hours</span>
+                                                        </li>
+                                                        <li class="oTxtMed">
+                                                            <strong>$22.50</strong>
+                                                            <span class="oMute">/hr</span>
+                                                        </li>
+                                                        <li class="oTxtMed">
+                                                            <strong>$2,804</strong>
+                                                            <span class="oMute">earned</span>
+                                                        </li>
+                                                        <li>
+                                                            <div class="oMute">November 2013 - Present</div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="jsDetails isHidden" data-rel="MDikSdXuzFGWMyJ%2BRTJImVkIfi3mEjKeaUV7R%2BYn7rI%3D" data-order="7"></div>
+                                            </div>
+                                        </article>
+                                        <article class="cols jsAssignment  jsInProgress isHidden" data-rel="irUzoaa7c9OyHFYfyf73cFNnyoRREtLgAUWebjwOdoo%3D" data-order="8">
+                                            <div class="cols p">
+                                                <div class="col col3of5 oTxtEnlarged">
+                                                    <div class="p">
+                                                        <a class="jsWorkHistoryJobTitle oTxtMed oBtnPopup" href="#">
+                                                            <strong>Core: Fixing WordPress kalender and footer</strong>
+                                                        </a>
+                                                    </div>
+                                                    <span class="oMute">Job in progress</span>
+                                                </div>
+                                                <div class="col col2of5 txtRight">
+                                                    <ul class="oTightList p">
+                                                        <li class="oTxtMed">
+                                                            <strong>16</strong>
+                                                            <span class="oMute">hours</span>
+                                                        </li>
+                                                        <li class="oTxtMed">
+                                                            <strong>$22.22</strong>
+                                                            <span class="oMute">/hr</span>
+                                                        </li>
+                                                        <li class="oTxtMed">
+                                                            <strong>$348</strong>
+                                                            <span class="oMute">earned</span>
+                                                        </li>
+                                                        <li>
+                                                            <div class="oMute">November 2013 - Present</div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="jsDetails isHidden" data-order="8"></div>
+                                            </div>
+                                        </article>
+                                        <span></span>
+                                    </section>
+                                    <section class="oListLite" id="jsAssignmentsClosed">
+                                        <article class="cols jsAssignment " data-rel="%2BVwl1ywbLnjXtGSsF5Ke0Cr1KbRquE80cpORCgzq4%2F8%3D" data-order="3" style="position:relative">
+                                            <help-tip style="position: absolute; top: 56px; right: 8px;" ng-show="$state.includes('atsHome.suggestions.profile')"></help-tip>
+
+                                            <div class="cols p">
+                                                <div class="col col3of5 oTxtEnlarged">
+                                                    <div class="p">
+                                                        <a class="jsWorkHistoryJobTitle oTxtMed oBtnPopup" href="#">
+                                                            <strong>Milestone 2 for the website development</strong>
+                                                        </a>
+                                                    </div>"Great Freelancer, will hire again!"</div>
+                                                <div class="col col2of5 txtRight">
+                                                    <ul class="oTightList p">
+                                                        <li>
+                                                            <div class="oStarsContainer">
+                                                                <div class="oStarsValue" style="width:100%"></div>
+                                                            </div>
+                                                            <strong class="oTxtMed">5.00</strong>
+                                                        </li>
+                                                        <li class="oTxtMed">
+                                                            <strong>$500</strong>
+                                                            <span class="oMute">Fixed Price</span>
+                                                        </li>
+                                                        <li>
+                                                            <div class="oMute">March 2014 - April 2014</div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="jsDetails isHidden" data-order="3"></div>
+                                            </div>
+                                        </article>
+                                        <article class="cols jsAssignment " data-rel="Iq%2FoD8U4UICV3DzdAuc8OzRggxg7HdiIGfW3b1sPcfg%3D" data-order="4">
+                                            <div class="cols p">
+                                                <div class="col col3of5 oTxtEnlarged">
+                                                    <div class="p">
+                                                        <a class="jsWorkHistoryJobTitle oTxtMed oBtnPopup" href="#">
+                                                            <strong>Website Development</strong>
+                                                        </a>
+                                                    </div>"Absolutely amazing freelancer, Fran knows what he is doing, very good and fast coder, and a great communicator. will defiantly hire Fran again!!!"</div>
+                                                <div class="col col2of5 txtRight">
+                                                    <ul class="oTightList p">
+                                                        <li>
+                                                            <div class="oStarsContainer">
+                                                                <div class="oStarsValue" style="width:100%"></div>
+                                                            </div>
+                                                            <strong class="oTxtMed">5.00</strong>
+                                                        </li>
+                                                        <li class="oTxtMed">
+                                                            <strong>15</strong>
+                                                            <span class="oMute">hours</span>
+                                                        </li>
+                                                        <li class="oTxtMed">
+                                                            <strong>$35.00</strong>
+                                                            <span class="oMute">/hr</span>
+                                                        </li>
+                                                        <li class="oTxtMed">
+                                                            <strong>$537</strong>
+                                                            <span class="oMute">earned</span>
+                                                        </li>
+                                                        <li>
+                                                            <div class="oMute">February 2014 - March 2014</div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="jsDetails isHidden" data-order="4"></div>
+                                            </div>
+                                        </article>
+                                        <article class="cols jsAssignment " data-rel="AnQx0pJ%2BlygS7Vs0M8ygH5ugXQV5RQ%2BpMhcj3QEa6Hc%3D" data-order="5">
+                                            <div class="cols p">
+                                                <div class="col col3of5 oTxtEnlarged">
+                                                    <div class="p">
+                                                        <a class="jsWorkHistoryJobTitle oTxtMed oBtnPopup" href="#">
+                                                            <strong>Development tasks</strong>
+                                                        </a>
+                                                    </div>"Fran is a pleasure to work with. He is an excellent communicator, with a great technical skills, We will definitely hire him again"</div>
+                                                <div class="col col2of5 txtRight">
+                                                    <ul class="oTightList p">
+                                                        <li>
+                                                            <div class="oStarsContainer">
+                                                                <div class="oStarsValue" style="width:100%"></div>
+                                                            </div>
+                                                            <strong class="oTxtMed">5.00</strong>
+                                                        </li>
+                                                        <li class="oTxtMed">
+                                                            <strong>33</strong>
+                                                            <span class="oMute">hours</span>
+                                                        </li>
+                                                        <li class="oTxtMed">
+                                                            <strong>$35.00</strong>
+                                                            <span class="oMute">/hr</span>
+                                                        </li>
+                                                        <li class="oTxtMed">
+                                                            <strong>$1,161</strong>
+                                                            <span class="oMute">earned</span>
+                                                        </li>
+                                                        <li>
+                                                            <div class="oMute">January 2014 - February 2014</div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="jsDetails isHidden" data-order="5"></div>
+                                            </div>
+                                        </article>
+                                        <article class="cols jsAssignment " data-rel="hdJXP05CG64CjLy%2B7ZidsEQ4p4n3YGY%2FM08B2MKFFII%3D" data-order="6">
+                                            <div class="cols p">
+                                                <div class="col col3of5 oTxtEnlarged">
+                                                    <div class="p">
+                                                        <a class="jsWorkHistoryJobTitle oTxtMed oBtnPopup" href="#">
+                                                            <strong>Build custom WordPress site based on Canvas</strong>
+                                                        </a>
+                                                    </div>"Fran did a great job on this project. His WordPress knowledge is great and his PHP skills are also superb, all problems we're easily solved."</div>
+                                                <div class="col col2of5 txtRight">
+                                                    <ul class="oTightList p">
+                                                        <li>
+                                                            <div class="oStarsContainer">
+                                                                <div class="oStarsValue" style="width:81.99999999999999%"></div>
+                                                            </div>
+                                                            <strong class="oTxtMed">4.10</strong>
+                                                        </li>
+                                                        <li class="oTxtMed">
+                                                            <strong>$1,645</strong>
+                                                            <span class="oMute">Fixed Price</span>
+                                                        </li>
+                                                        <li>
+                                                            <div class="oMute">July 2013 - February 2014</div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="jsDetails isHidden" data-order="6"></div>
+                                            </div>
+                                        </article>
+                                        <article class="cols jsAssignment " data-rel="gtNi6PQRcMKTW5Gfx%2Fny6NbiE2p%2BvSFQYy%2F4fCb8G6c%3D" data-order="9">
+                                            <div class="cols p">
+                                                <div class="col col3of5 oTxtEnlarged">
+                                                    <div class="p">
+                                                        <a class="jsWorkHistoryJobTitle oTxtMed oBtnPopup" href="#">
+                                                            <strong>Payment Gateway integration</strong>
+                                                        </a>
+                                                    </div>"Fran made great job with full cooperation, we will definitely hire him again.
+                                                    <br>Thank You Fran"</div>
+                                                <div class="col col2of5 txtRight">
+                                                    <ul class="oTightList p">
+                                                        <li>
+                                                            <div class="oStarsContainer">
+                                                                <div class="oStarsValue" style="width:100%"></div>
+                                                            </div>
+                                                            <strong class="oTxtMed">5.00</strong>
+                                                        </li>
+                                                        <li class="oTxtMed">
+                                                            <strong>$123</strong>
+                                                            <span class="oMute">Fixed Price</span>
+                                                        </li>
+                                                        <li>
+                                                            <div class="oMute">December 2013</div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="jsDetails isHidden" data-order="9"></div>
+                                            </div>
+                                        </article>
+                                        <article class="cols jsAssignment  isHidden" data-rel="Pn27HLprkpqAdv8IxmbX%2BTmmu38QnWDCVGGYGykbh%2FY%3D" data-order="10">
+                                            <div class="cols p">
+                                                <div class="col col3of5 oTxtEnlarged">
+                                                    <div class="p">
+                                                        <a class="jsWorkHistoryJobTitle oTxtMed oBtnPopup" href="#">
+                                                            <strong>Custom Woocommerce development and modifications</strong>
+                                                        </a>
+                                                    </div>"Great freelancer,&nbsp;&nbsp;absolutely will hire again!"</div>
+                                                <div class="col col2of5 txtRight">
+                                                    <ul class="oTightList p">
+                                                        <li>
+                                                            <div class="oStarsContainer">
+                                                                <div class="oStarsValue" style="width:100%"></div>
+                                                            </div>
+                                                            <strong class="oTxtMed">5.00</strong>
+                                                        </li>
+                                                        <li class="oTxtMed">
+                                                            <strong>17</strong>
+                                                            <span class="oMute">hours</span>
+                                                        </li>
+                                                        <li class="oTxtMed">
+                                                            <strong>$35.00</strong>
+                                                            <span class="oMute">/hr</span>
+                                                        </li>
+                                                        <li class="oTxtMed">
+                                                            <strong>$525</strong>
+                                                            <span class="oMute">earned</span>
+                                                        </li>
+                                                        <li>
+                                                            <div class="oMute">November 2013 - December 2013</div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="jsDetails isHidden" data-order="10"></div>
+                                            </div>
+                                        </article>
+                                        <article class="cols jsAssignment  isHidden" data-rel="o0NLkcGIlTJ1cfz0egYpwrReCrTtO3ZJZy628Lrh7Qo%3D" data-order="11">
+                                            <div class="cols p">
+                                                <div class="col col3of5 oTxtEnlarged">
+                                                    <div class="p">
+                                                        <a class="jsWorkHistoryJobTitle oTxtMed oBtnPopup" href="#">
+                                                            <strong>Securing My Web Page - gourmetglass.com.au</strong>
+                                                        </a>
+                                                    </div>"Fran did what I asked in less than an hour. He dealt patiently with me who was so computer illiterate I couldn't even send him the password without a major hassle. I would recommend him highly to anyone, anywhere."</div>
+                                                <div class="col col2of5 txtRight">
+                                                    <ul class="oTightList p">
+                                                        <li>
+                                                            <div class="oStarsContainer">
+                                                                <div class="oStarsValue" style="width:100%"></div>
+                                                            </div>
+                                                            <strong class="oTxtMed">5.00</strong>
+                                                        </li>
+                                                        <li class="oTxtMed">
+                                                            <strong>1</strong>
+                                                            <span class="oMute">hours</span>
+                                                        </li>
+                                                        <li class="oTxtMed">
+                                                            <strong>$33.33</strong>
+                                                            <span class="oMute">/hr</span>
+                                                        </li>
+                                                        <li class="oTxtMed">
+                                                            <strong>$48</strong>
+                                                            <span class="oMute">earned</span>
+                                                        </li>
+                                                        <li>
+                                                            <div class="oMute">November 2013</div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="jsDetails isHidden" data-order="11"></div>
+                                            </div>
+                                        </article>
+                                        <article class="cols jsAssignment  isHidden" data-rel="4o8FRi00oB3l%2FgwPCo0JnwQRVcIzLsG2GIHQys7Ntfk%3D" data-order="12">
+                                            <div class="cols p">
+                                                <div class="col col3of5 oTxtEnlarged">
+                                                    <div class="p">
+                                                        <a class="jsWorkHistoryJobTitle oTxtMed oBtnPopup" href="#">
+                                                            <strong>Personal Consulting Business Website</strong>
+                                                        </a>
+                                                    </div>"Fran helped me out at the last minute to get a website up.&nbsp;&nbsp;Was very communicative and delivered what I needed quickly and to a very good standard.&nbsp;&nbsp;Will definitely use again."</div>
+                                                <div class="col col2of5 txtRight">
+                                                    <ul class="oTightList p">
+                                                        <li>
+                                                            <div class="oStarsContainer">
+                                                                <div class="oStarsValue" style="width:96%"></div>
+                                                            </div>
+                                                            <strong class="oTxtMed">4.80</strong>
+                                                        </li>
+                                                        <li class="oTxtMed">
+                                                            <strong>$100</strong>
+                                                            <span class="oMute">Fixed Price</span>
+                                                        </li>
+                                                        <li>
+                                                            <div class="oMute">November 2013</div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="jsDetails isHidden" data-order="12"></div>
+                                            </div>
+                                        </article>
+                                        <article class="cols jsAssignment  isHidden" data-rel="bf3WCMshvFJFLhSNodl12gyaLfEgJy5FC9WaBLl23hQ%3D" data-order="13">
+                                            <div class="cols p">
+                                                <div class="col col3of5 oTxtEnlarged">
+                                                    <div class="p">
+                                                        <a class="jsWorkHistoryJobTitle oTxtMed oBtnPopup" href="#">
+                                                            <strong>Turn a list of links into thumbnail galleries</strong>
+                                                        </a>
+                                                    </div>"Job well done :-)"</div>
+                                                <div class="col col2of5 txtRight">
+                                                    <ul class="oTightList p">
+                                                        <li>
+                                                            <div class="oStarsContainer">
+                                                                <div class="oStarsValue" style="width:100%"></div>
+                                                            </div>
+                                                            <strong class="oTxtMed">5.00</strong>
+                                                        </li>
+                                                        <li class="oTxtMed">
+                                                            <strong>$133</strong>
+                                                            <span class="oMute">Fixed Price</span>
+                                                        </li>
+                                                        <li>
+                                                            <div class="oMute">October 2013 - November 2013</div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="jsDetails isHidden" data-rel="bf3WCMshvFJFLhSNodl12gyaLfEgJy5FC9WaBLl23hQ%3D" data-order="13"></div>
+                                            </div>
+                                        </article>
+                                        <article class="cols jsAssignment  isHidden" data-rel="eFSNwvLE6hB2yqDJ43YKFjeuXN6vgoqU8nacn%2BRqph0%3D" data-order="14">
+                                            <div class="cols p">
+                                                <div class="col col3of5 oTxtEnlarged">
+                                                    <div class="p">
+                                                        <a class="jsWorkHistoryJobTitle oTxtMed oBtnPopup" href="#">
+                                                            <strong>Develop desktop website based on PSD with "Swiss design"</strong>
+                                                        </a>
+                                                    </div>"Good developer that asks relevant questions and made a great backend, but unfortunately didnt manage to meet the deadlines."</div>
+                                                <div class="col col2of5 txtRight">
+                                                    <ul class="oTightList p">
+                                                        <li>
+                                                            <div class="oStarsContainer">
+                                                                <div class="oStarsValue" style="width:91%"></div>
+                                                            </div>
+                                                            <strong class="oTxtMed">4.55</strong>
+                                                        </li>
+                                                        <li class="oTxtMed">
+                                                            <strong>$1,266</strong>
+                                                            <span class="oMute">Fixed Price</span>
+                                                        </li>
+                                                        <li>
+                                                            <div class="oMute">September 2013 - October 2013</div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="jsDetails isHidden" data-order="14"></div>
+                                            </div>
+                                        </article>
+                                        <article class="cols jsAssignment  isHidden" data-rel="f3Tyf7OOccY%2Fskqd%2BIm069%2Fg4n%2Fr12O3SHaZWm5rsoU%3D" data-order="15">
+                                            <div class="cols p">
+                                                <div class="col col3of5 oTxtEnlarged">
+                                                    <div class="p">
+                                                        <a class="jsWorkHistoryJobTitle oTxtMed oBtnPopup" href="#">
+                                                            <strong>WORDPRESS ACCORDION PLUGIN</strong>
+                                                        </a>
+                                                    </div>"PERFECT! I have no problem to say: He's the best contractor i've ever worked with, both online and offline."</div>
+                                                <div class="col col2of5 txtRight">
+                                                    <ul class="oTightList p">
+                                                        <li>
+                                                            <div class="oStarsContainer">
+                                                                <div class="oStarsValue" style="width:100%"></div>
+                                                            </div>
+                                                            <strong class="oTxtMed">5.00</strong>
+                                                        </li>
+                                                        <li class="oTxtMed">
+                                                            <strong>$251</strong>
+                                                            <span class="oMute">Fixed Price</span>
+                                                        </li>
+                                                        <li>
+                                                            <div class="oMute">July 2013 - October 2013</div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="jsDetails isHidden" data-rel="f3Tyf7OOccY%2Fskqd%2BIm069%2Fg4n%2Fr12O3SHaZWm5rsoU%3D" data-order="15"></div>
+                                            </div>
+                                        </article>
+                                        <article class="cols jsAssignment  isHidden" data-rel="8nfIHgP9Bmto9UqxeoXagkxkMaEhEe2AOKnz1jeJjwg%3D" data-order="16">
+                                            <div class="cols p">
+                                                <div class="col col3of5 oTxtEnlarged">
+                                                    <div class="p">
+                                                        <a class="jsWorkHistoryJobTitle oTxtMed oBtnPopup" href="#">
+                                                            <strong>Senior PHP developer. Long Term Contract. Only the best will be considered</strong>
+                                                        </a>
+                                                    </div>"Fran is a very experienced Wordpress developer who was able to bring his impressive skills to this project and improve the overall outcome. We had a small false start which caused some timing issues - but overall I would recommend his work highly and would definitely hire again."</div>
+                                                <div class="col col2of5 txtRight">
+                                                    <ul class="oTightList p">
+                                                        <li>
+                                                            <div class="oStarsContainer">
+                                                                <div class="oStarsValue" style="width:96.99999999999999%"></div>
+                                                            </div>
+                                                            <strong class="oTxtMed">4.85</strong>
+                                                        </li>
+                                                        <li class="oTxtMed">
+                                                            <strong>135</strong>
+                                                            <span class="oMute">hours</span>
+                                                        </li>
+                                                        <li class="oTxtMed">
+                                                            <strong>$27.78</strong>
+                                                            <span class="oMute">/hr</span>
+                                                        </li>
+                                                        <li class="oTxtMed">
+                                                            <strong>$3,755</strong>
+                                                            <span class="oMute">earned</span>
+                                                        </li>
+                                                        <li>
+                                                            <div class="oMute">July 2013 - November 2013</div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="jsDetails isHidden" data-rel="8nfIHgP9Bmto9UqxeoXagkxkMaEhEe2AOKnz1jeJjwg%3D" data-order="16"></div>
+                                            </div>
+                                        </article>
+                                        <article class="cols jsAssignment  isHidden" data-rel="FQ3aGG6Vh2yat3aWXL3nWyvFb2QMAiXSGL0idb6Mjhw%3D" data-order="17">
+                                            <div class="cols p">
+                                                <div class="col col3of5 oTxtEnlarged">
+                                                    <div class="p">
+                                                        <a class="jsWorkHistoryJobTitle oTxtMed oBtnPopup" href="#">
+                                                            <strong>Python script to parse XML files generated by ArCGIS</strong>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="col col2of5 txtRight">
+                                                    <ul class="oTightList p">
+                                                        <li>
+                                                            <div class="oStarsContainer">
+                                                                <div class="oStarsValue" style="width:96.99999999999999%"></div>
+                                                            </div>
+                                                            <strong class="oTxtMed">4.85</strong>
+                                                        </li>
+                                                        <li class="oTxtMed">
+                                                            <strong>18</strong>
+                                                            <span class="oMute">hours</span>
+                                                        </li>
+                                                        <li class="oTxtMed">
+                                                            <strong>$30.00</strong>
+                                                            <span class="oMute">/hr</span>
+                                                        </li>
+                                                        <li class="oTxtMed">
+                                                            <strong>$545</strong>
+                                                            <span class="oMute">earned</span>
+                                                        </li>
+                                                        <li>
+                                                            <div class="oMute">August 2013 - January 2014</div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="jsDetails isHidden" data-order="17"></div>
+                                            </div>
+                                        </article>
+                                        <article class="cols jsAssignment  isHidden" data-rel="BBiug85I0q%2F72i2CkgFPhdJqNFgCuAVo05k86dx6OcQ%3D" data-order="18">
+                                            <div class="cols p">
+                                                <div class="col col3of5 oTxtEnlarged">
+                                                    <div class="p">
+                                                        <a class="jsWorkHistoryJobTitle oTxtMed oBtnPopup" href="#">
+                                                            <strong>mathematics phonegap app</strong>
+                                                        </a>
+                                                    </div>"Fran communicates very well, with superior English reading and writing skills. He was willing to learn a new javascript framework just to handle this job. He jumped right and communicated well, not just with me, but with other members of our team."</div>
+                                                <div class="col col2of5 txtRight">
+                                                    <ul class="oTightList p">
+                                                        <li>
+                                                            <div class="oStarsContainer">
+                                                                <div class="oStarsValue" style="width:100%"></div>
+                                                            </div>
+                                                            <strong class="oTxtMed">5.00</strong>
+                                                        </li>
+                                                        <li class="oTxtMed">
+                                                            <strong>4</strong>
+                                                            <span class="oMute">hours</span>
+                                                        </li>
+                                                        <li class="oTxtMed">
+                                                            <strong>$27.78</strong>
+                                                            <span class="oMute">/hr</span>
+                                                        </li>
+                                                        <li class="oTxtMed">
+                                                            <strong>$111</strong>
+                                                            <span class="oMute">earned</span>
+                                                        </li>
+                                                        <li>
+                                                            <div class="oMute">August 2013</div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="jsDetails isHidden" data-order="18"></div>
+                                            </div>
+                                        </article>
+                                        <article class="cols jsAssignment  isHidden" data-rel="68y1m6MhRiULkTg00%2B13toOnhRWutWVajUh8GkVeYNA%3D" data-order="19">
+                                            <div class="cols p">
+                                                <div class="col col3of5 oTxtEnlarged">
+                                                    <div class="p">
+                                                        <a class="jsWorkHistoryJobTitle oTxtMed oBtnPopup" href="#">
+                                                            <strong>Wordpress Expert - Plugin</strong>
+                                                        </a>
+                                                    </div>
+                                                    <span class="oNull">No feedback given</span>
+                                                </div>
+                                                <div class="col col2of5 txtRight">
+                                                    <ul class="oTightList p">
+                                                        <li class="oTxtMed">
+                                                            <strong>$55</strong>
+                                                            <span class="oMute">Fixed Price</span>
+                                                        </li>
+                                                        <li>
+                                                            <div class="oMute">May 2013 - July 2013</div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="jsDetails isHidden" data-rel="68y1m6MhRiULkTg00%2B13toOnhRWutWVajUh8GkVeYNA%3D" data-order="19"></div>
+                                            </div>
+                                        </article>
+                                        <article class="cols jsAssignment  isHidden" data-rel="%2B3FFmdeK6IIa1%2F5cvmAuD5cOnX3%2BAJfbURlxIU7SPq0%3D" data-order="20">
+                                            <div class="cols p">
+                                                <div class="col col3of5 oTxtEnlarged">
+                                                    <div class="p">
+                                                        <a class="jsWorkHistoryJobTitle oTxtMed oBtnPopup" href="#">
+                                                            <strong>Wordpress Proff. Developer</strong>
+                                                        </a>
+                                                    </div>
+                                                    <span class="oNull">No feedback given</span>
+                                                </div>
+                                                <div class="col col2of5 txtRight">
+                                                    <ul class="oTightList p">
+                                                        <li class="oTxtMed">
+                                                            <strong>10</strong>
+                                                            <span class="oMute">hours</span>
+                                                        </li>
+                                                        <li class="oTxtMed">
+                                                            <strong>$27.78</strong>
+                                                            <span class="oMute">/hr</span>
+                                                        </li>
+                                                        <li class="oTxtMed">
+                                                            <strong>$264</strong>
+                                                            <span class="oMute">earned</span>
+                                                        </li>
+                                                        <li>
+                                                            <div class="oMute">May 2013 - October 2013</div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="jsDetails isHidden" data-order="20"></div>
+                                            </div>
+                                        </article>
+                                        <article class="cols jsAssignment  isHidden" data-rel="mcJDFbOYh5Gb%2Bg9HPruJ5FlihHoGgpKLOK%2BQH1aom1g%3D" data-order="21">
+                                            <div class="cols p">
+                                                <div class="col col3of5 oTxtEnlarged">
+                                                    <div class="p">
+                                                        <a class="jsWorkHistoryJobTitle oTxtMed oBtnPopup" href="#">
+                                                            <strong>Software Engineer</strong>
+                                                        </a>
+                                                    </div>
+                                                    <span class="oNull">No feedback given</span>
+                                                </div>
+                                                <div class="col col2of5 txtRight">
+                                                    <ul class="oTightList p">
+                                                        <li class="oTxtMed">
+                                                            <strong>2</strong>
+                                                            <span class="oMute">hours</span>
+                                                        </li>
+                                                        <li>
+                                                            <div class="oMute">July 2013</div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="jsDetails isHidden" data-rel="mcJDFbOYh5Gb%2Bg9HPruJ5FlihHoGgpKLOK%2BQH1aom1g%3D" data-order="21"></div>
+                                            </div>
+                                        </article>
+                                        <article class="cols jsAssignment  isHidden" data-rel="3zteMM7DgBfBZ1GMhFu1wsWNsT2qyBdrHf%2FavUkbOU0%3D" data-order="22">
+                                            <div class="cols p">
+                                                <div class="col col3of5 oTxtEnlarged">
+                                                    <div class="p">
+                                                        <a class="jsWorkHistoryJobTitle oTxtMed oBtnPopup" href="#">
+                                                            <strong>Build custom WordPress site based on Canvas</strong>
+                                                        </a>
+                                                    </div>"A job well done. Fran knows his way around WordPress very well. Excellent communication and attention to detail."</div>
+                                                <div class="col col2of5 txtRight">
+                                                    <ul class="oTightList p">
+                                                        <li>
+                                                            <div class="oStarsContainer">
+                                                                <div class="oStarsValue" style="width:100%"></div>
+                                                            </div>
+                                                            <strong class="oTxtMed">5.00</strong>
+                                                        </li>
+                                                        <li class="oTxtMed">
+                                                            <strong>$440</strong>
+                                                            <span class="oMute">Fixed Price</span>
+                                                        </li>
+                                                        <li>
+                                                            <div class="oMute">June 2013</div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="jsDetails isHidden" data-order="22"></div>
+                                            </div>
+                                        </article>
+                                        <article class="cols jsAssignment  isHidden" data-rel="bGeb1eLd9uSd%2BQA%2BXXq3GuO9%2FhsvSCoulLAOEEk%2BoxQ%3D" data-order="23">
+                                            <div class="cols p">
+                                                <div class="col col3of5 oTxtEnlarged">
+                                                    <div class="p">
+                                                        <a class="jsWorkHistoryJobTitle oTxtMed oBtnPopup" href="#">
+                                                            <strong>WordPress Developer</strong>
+                                                        </a>
+                                                    </div>"Fran has excellent skills in programming and he is very accommodating and willing to help. A great person to work with certainly!"</div>
+                                                <div class="col col2of5 txtRight">
+                                                    <ul class="oTightList p">
+                                                        <li>
+                                                            <div class="oStarsContainer">
+                                                                <div class="oStarsValue" style="width:100%"></div>
+                                                            </div>
+                                                            <strong class="oTxtMed">5.00</strong>
+                                                        </li>
+                                                        <li class="oTxtMed">
+                                                            <strong>$624</strong>
+                                                            <span class="oMute">Fixed Price</span>
+                                                        </li>
+                                                        <li>
+                                                            <div class="oMute">May 2013 - June 2013</div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="jsDetails isHidden" data-rel="bGeb1eLd9uSd%2BQA%2BXXq3GuO9%2FhsvSCoulLAOEEk%2BoxQ%3D" data-order="23"></div>
+                                            </div>
+                                        </article>
+                                        <article class="cols jsAssignment  isHidden" data-rel="TXyaZqAMDxrTmW8f9gT1teIVjAHZ6S8vQDoqEwXsPZY%3D" data-order="24">
+                                            <div class="cols p">
+                                                <div class="col col3of5 oTxtEnlarged">
+                                                    <div class="p">
+                                                        <a class="jsWorkHistoryJobTitle oTxtMed oBtnPopup" href="#">
+                                                            <strong>need to email text and attachment via wordpress</strong>
+                                                        </a>
+                                                    </div>"No comment."</div>
+                                                <div class="col col2of5 txtRight">
+                                                    <ul class="oTightList p">
+                                                        <li>
+                                                            <div class="oStarsContainer">
+                                                                <div class="oStarsValue" style="width:65%"></div>
+                                                            </div>
+                                                            <strong class="oTxtMed">3.25</strong>
+                                                        </li>
+                                                        <li class="oTxtMed">
+                                                            <strong>2</strong>
+                                                            <span class="oMute">hours</span>
+                                                        </li>
+                                                        <li class="oTxtMed">
+                                                            <strong>$27.78</strong>
+                                                            <span class="oMute">/hr</span>
+                                                        </li>
+                                                        <li class="oTxtMed">
+                                                            <strong>$56</strong>
+                                                            <span class="oMute">earned</span>
+                                                        </li>
+                                                        <li>
+                                                            <div class="oMute">June 2013</div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="jsDetails isHidden" data-rel="TXyaZqAMDxrTmW8f9gT1teIVjAHZ6S8vQDoqEwXsPZY%3D" data-order="24"></div>
+                                            </div>
+                                        </article>
+                                        <article class="cols jsAssignment  isHidden" data-rel="ry3yr0f%2FOPBOUv0Kvo8FCU%2Bh8TSAEqs8qEu9mU7rOmg%3D" data-order="25">
+                                            <div class="cols p">
+                                                <div class="col col3of5 oTxtEnlarged">
+                                                    <div class="p">
+                                                        <a class="jsWorkHistoryJobTitle oTxtMed oBtnPopup" href="#">
+                                                            <strong>Advanced Wordpress</strong>
+                                                        </a>
+                                                    </div>
+                                                    <span class="oNull">No feedback given</span>
+                                                </div>
+                                                <div class="col col2of5 txtRight">
+                                                    <ul class="oTightList p">
+                                                        <li class="oTxtMed">
+                                                            <strong>$40</strong>
+                                                            <span class="oMute">Fixed Price</span>
+                                                        </li>
+                                                        <li>
+                                                            <div class="oMute">April 2013 - May 2013</div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="jsDetails isHidden" data-order="25"></div>
+                                            </div>
+                                        </article>
+                                        <article class="cols jsAssignment  isHidden" data-rel="21tL95GklHB7xwATJGWb6jdDFa97uaLTG3BZ0iTuAxk%3D" data-order="26">
+                                            <div class="cols p">
+                                                <div class="col col3of5 oTxtEnlarged">
+                                                    <div class="p">
+                                                        <a class="jsWorkHistoryJobTitle oTxtMed oBtnPopup" href="#">
+                                                            <strong>Wordpress Developer Theme needed FAST</strong>
+                                                        </a>
+                                                    </div>"Fran is by far the best of the contractors my team has worked with. Wordpress Theme and Plugin work done for me absolutely flawlessly, he is incredibly skilled, willing to work with you and flexible. He respects your tight deadlines and your budget. He suggests improvements and exceeds expectations on the job delivered. No brainer to hire for anybody with Wordpress related work here.
+                                                    <br>I am always honest with my feedback here and this time I only wish I could give him more stars in all categories.
+                                                    <br>I offered him another contract straight away, I hope he continues working with us. Thanks Fran!"</div>
+                                                <div class="col col2of5 txtRight">
+                                                    <ul class="oTightList p">
+                                                        <li>
+                                                            <div class="oStarsContainer">
+                                                                <div class="oStarsValue" style="width:100%"></div>
+                                                            </div>
+                                                            <strong class="oTxtMed">5.00</strong>
+                                                        </li>
+                                                        <li class="oTxtMed">
+                                                            <strong>59</strong>
+                                                            <span class="oMute">hours</span>
+                                                        </li>
+                                                        <li class="oTxtMed">
+                                                            <strong>$27.78</strong>
+                                                            <span class="oMute">/hr</span>
+                                                        </li>
+                                                        <li class="oTxtMed">
+                                                            <strong>$1,495</strong>
+                                                            <span class="oMute">earned</span>
+                                                        </li>
+                                                        <li>
+                                                            <div class="oMute">April 2013 - May 2013</div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="jsDetails isHidden" data-rel="21tL95GklHB7xwATJGWb6jdDFa97uaLTG3BZ0iTuAxk%3D" data-order="26"></div>
+                                            </div>
+                                        </article>
+                                        <article class="cols jsAssignment  isHidden" data-rel="6M4ekSqzaFvl0ZtL1lVg%2FUDMcucACMKIIcUV%2F3wp1IM%3D" data-order="27">
+                                            <div class="cols p">
+                                                <div class="col col3of5 oTxtEnlarged">
+                                                    <div class="p">
+                                                        <a class="jsWorkHistoryJobTitle oTxtMed oBtnPopup" href="#">
+                                                            <strong>Wordpress Plugin development completion</strong>
+                                                        </a>
+                                                    </div>"Job completed unsuccessfully, was very argumentative and uncooperative."</div>
+                                                <div class="col col2of5 txtRight">
+                                                    <ul class="oTightList p">
+                                                        <li>
+                                                            <div class="oStarsContainer">
+                                                                <div class="oStarsValue" style="width:27%"></div>
+                                                            </div>
+                                                            <strong class="oTxtMed">1.35</strong>
+                                                        </li>
+                                                        <li class="oTxtMed">
+                                                            <strong>12</strong>
+                                                            <span class="oMute">hours</span>
+                                                        </li>
+                                                        <li class="oTxtMed">
+                                                            <strong>$22.00</strong>
+                                                            <span class="oMute">/hr</span>
+                                                        </li>
+                                                        <li class="oTxtMed">
+                                                            <strong>$257</strong>
+                                                            <span class="oMute">earned</span>
+                                                        </li>
+                                                        <li>
+                                                            <div class="oMute">April 2013 - May 2013</div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="jsDetails isHidden" data-rel="6M4ekSqzaFvl0ZtL1lVg%2FUDMcucACMKIIcUV%2F3wp1IM%3D" data-order="27"></div>
+                                            </div>
+                                        </article>
+                                        <article class="cols jsAssignment  isHidden" data-rel="p4674nFLtzE1U4rwSF%2FIHDNl0TxvN7oekxolpnMGb04%3D" data-order="28">
+                                            <div class="cols p">
+                                                <div class="col col3of5 oTxtEnlarged">
+                                                    <div class="p">
+                                                        <a class="jsWorkHistoryJobTitle oTxtMed oBtnPopup" href="#">
+                                                            <strong>Need wordpress plugin modification</strong>
+                                                        </a>
+                                                    </div>"Excellent work done by Fran. Raj"</div>
+                                                <div class="col col2of5 txtRight">
+                                                    <ul class="oTightList p">
+                                                        <li>
+                                                            <div class="oStarsContainer">
+                                                                <div class="oStarsValue" style="width:100%"></div>
+                                                            </div>
+                                                            <strong class="oTxtMed">5.00</strong>
+                                                        </li>
+                                                        <li class="oTxtMed">
+                                                            <strong>$28</strong>
+                                                            <span class="oMute">Fixed Price</span>
+                                                        </li>
+                                                        <li>
+                                                            <div class="oMute">April 2013</div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="jsDetails isHidden" data-rel="p4674nFLtzE1U4rwSF%2FIHDNl0TxvN7oekxolpnMGb04%3D" data-order="28"></div>
+                                            </div>
+                                        </article>
+                                        <article class="cols jsAssignment  isHidden" data-rel="Lsfa1QSnYopX%2F6WL217WVEnlScUXarRiruWKkNpMihc%3D" data-order="29">
+                                            <div class="cols p">
+                                                <div class="col col3of5 oTxtEnlarged">
+                                                    <div class="p">
+                                                        <a class="jsWorkHistoryJobTitle oTxtMed oBtnPopup" href="#">
+                                                            <strong>Advanced Wordpress</strong>
+                                                        </a>
+                                                    </div>"Fran was excellent.&nbsp;&nbsp;Fixed up issues on the site that many other coders said they could but failed.&nbsp;&nbsp;He is the real deal and will be working with him again.&nbsp;&nbsp;Thanks Fran!"</div>
+                                                <div class="col col2of5 txtRight">
+                                                    <ul class="oTightList p">
+                                                        <li>
+                                                            <div class="oStarsContainer">
+                                                                <div class="oStarsValue" style="width:100%"></div>
+                                                            </div>
+                                                            <strong class="oTxtMed">5.00</strong>
+                                                        </li>
+                                                        <li class="oTxtMed">
+                                                            <strong>$111</strong>
+                                                            <span class="oMute">Fixed Price</span>
+                                                        </li>
+                                                        <li>
+                                                            <div class="oMute">April 2013</div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="jsDetails isHidden" data-rel="Lsfa1QSnYopX%2F6WL217WVEnlScUXarRiruWKkNpMihc%3D" data-order="29"></div>
+                                            </div>
+                                        </article>
+                                        <article class="cols jsAssignment  isHidden" data-rel="I0OIJzz73T9tc6fkb5xHirE9KOeBC4veOdLrAyb3s68%3D" data-order="30">
+                                            <div class="cols p">
+                                                <div class="col col3of5 oTxtEnlarged">
+                                                    <div class="p">
+                                                        <a class="jsWorkHistoryJobTitle oTxtMed oBtnPopup" href="#">
+                                                            <strong>Django Mentor &amp; Programmer</strong>
+                                                        </a>
+                                                    </div>
+                                                    <span class="oNull">No feedback given</span>
+                                                </div>
+                                                <div class="col col2of5 txtRight">
+                                                    <ul class="oTightList p">
+                                                        <li class="oTxtMed">
+                                                            <strong>6</strong>
+                                                            <span class="oMute">hours</span>
+                                                        </li>
+                                                        <li class="oTxtMed">
+                                                            <strong>$22.22</strong>
+                                                            <span class="oMute">/hr</span>
+                                                        </li>
+                                                        <li class="oTxtMed">
+                                                            <strong>$137</strong>
+                                                            <span class="oMute">earned</span>
+                                                        </li>
+                                                        <li>
+                                                            <div class="oMute">August 2012 - November 2012</div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="jsDetails isHidden" data-rel="I0OIJzz73T9tc6fkb5xHirE9KOeBC4veOdLrAyb3s68%3D" data-order="30"></div>
+                                            </div>
+                                        </article>
+                                        <article class="cols jsAssignment  isHidden" data-rel="siP%2BydAVHturuisLsTInIpiP26xObONh6WeaBU9H3BA%3D" data-order="31">
+                                            <div class="cols p">
+                                                <div class="col col3of5 oTxtEnlarged">
+                                                    <div class="p">
+                                                        <a class="jsWorkHistoryJobTitle oTxtMed oBtnPopup" href="#">
+                                                            <strong>Online Business App in Django</strong>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="col col2of5 txtRight">
+                                                    <ul class="oTightList p">
+                                                        <li>
+                                                            <div class="oStarsContainer">
+                                                                <div class="oStarsValue" style="width:96.99999999999999%"></div>
+                                                            </div>
+                                                            <strong class="oTxtMed">4.85</strong>
+                                                        </li>
+                                                        <li class="oTxtMed">
+                                                            <strong>70</strong>
+                                                            <span class="oMute">hours</span>
+                                                        </li>
+                                                        <li class="oTxtMed">
+                                                            <strong>$13.00</strong>
+                                                            <span class="oMute">/hr</span>
+                                                        </li>
+                                                        <li class="oTxtMed">
+                                                            <strong>$1,077</strong>
+                                                            <span class="oMute">earned</span>
+                                                        </li>
+                                                        <li>
+                                                            <div class="oMute">March 2012 - May 2012</div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="jsDetails isHidden" data-order="31"></div>
+                                            </div>
+                                        </article>
+                                        <footer class="oMoreRow">
+                                            <button class="oMore oMoreLarge" data-job-history="true" data-scroll="10">View More
+                                                <span class="jsCount oMoreCount">22</span>
+                                            </button>
+                                        </footer>
+                                    </section>
+                                </div>
+                            </section>
+
+                        </section>
+
+
+
+                        <section id="profilePortfolioSection">
+
+                            <div>
+                                <h2 class="oH2Lite" id="portfolioJump">
+                                    Portfolio (6)
+                                    <select name="projectCategories" id="projectCategories" class="oFormLrgHlf oRight jsProjectCategories">
+                                        <option value="" label="Filter by category" selected="selected">Filter by category</option>
+                                        <option value="13" label="UI Design">UI Design</option>
+                                        <option value="9" label="Web Programming">Web Programming</option>
+                                    </select>
+                                </h2>
+                            </div>
+                            <ul class="jsProfileProjectList" data-count="4" style="min-height: 508px;">
+                                <li class="oProjectTile isActive animated none" data-category="9" data-project-id="443592458910289920" data-contract="">
+                                    <div class="oProjectThumbnail">
+                                        <img src="https://www.odesk.com/att/~~8Cen7zpTWXydf3Q6RU*s4gR7cceI9Z*lmbqY9pLa2BwZqkslP4TDv991UuytmfuE">
+                                    </div>
+                                    <div class="oProjectTileInfo oTxtEnlarged oImageOver">
+                                        <a class="oRowTitle oProjectTitle oEllipsis">Clean Corporate Site</a>
+                                    </div>
+                                </li>
+                                <li class="oProjectTile isActive isLast animated none" data-category="9" data-project-id="443592458813820928" data-contract="">
+                                    <div class="oProjectThumbnail">
+                                        <img src="https://www.odesk.com/att/~~8Cen7zpTWXydf3Q6RU*s4pHHPDfVSv2OmbqY9pLa2BwZqkslP4TDv991UuytmfuE">
+                                    </div>
+                                    <div class="oProjectTileInfo oTxtEnlarged oImageOver">
+                                        <a class="oRowTitle oProjectTitle oEllipsis">Fashion Shopping Magazine</a>
+                                    </div>
+                                </li>
+                                <li class="oProjectTile isActive animated none" data-category="9" data-project-id="443592458721546240" data-contract="">
+                                    <div class="oProjectThumbnail">
+                                        <img src="https://www.odesk.com/att/~~8Cen7zpTWXydf3Q6RU*s4gwXc4lNNfUwrI9-Q9metWi5HDU*5JVCJA==">
+                                    </div>
+                                    <div class="oProjectTileInfo oTxtEnlarged oImageOver">
+                                        <a class="oRowTitle oProjectTitle oEllipsis">My Portfolio &amp; Blog</a>
+                                    </div>
+                                </li>
+                                <li class="oProjectTile isActive isLast animated none" data-category="9" data-project-id="443592458629271552" data-contract="">
+                                    <div class="oProjectThumbnail">
+                                        <img src="https://www.odesk.com/att/~~8Cen7zpTWXydf3Q6RU*s4oKNmOMYD0h6rI9-Q9metWi5HDU*5JVCJA==">
+                                    </div>
+                                    <div class="oProjectTileInfo oTxtEnlarged oImageOver">
+                                        <a class="oRowTitle oProjectTitle oEllipsis">A Music School</a>
+                                    </div>
+                                </li>
+                                <li class="oProjectTile isActive animated jp-hidden" data-category="9" data-project-id="443592458541191168" data-contract="">
+                                    <div class="oProjectThumbnail">
+                                        <img src="https://www.odesk.com/att/~~8Cen7zpTWXydf3Q6RU*s4uyI2tER4JN7rI9-Q9metWi5HDU*5JVCJA==">
+                                    </div>
+                                    <div class="oProjectTileInfo oTxtEnlarged oImageOver">
+                                        <a class="oRowTitle oProjectTitle oEllipsis">InCider Memory Facebook game</a>
+                                    </div>
+                                </li>
+                                <li class="oProjectTile isActive isLast animated jp-hidden" data-category="13" data-project-id="443592458440527872" data-contract="">
+                                    <div class="oProjectThumbnail">
+                                        <img src="https://www.odesk.com/att/~~8Cen7zpTWXydf3Q6RU*s4i4id2-BtBn8rI9-Q9metWi5HDU*5JVCJA==">
+                                    </div>
+                                    <div class="oProjectTileInfo oTxtEnlarged oImageOver">
+                                        <a class="oRowTitle oProjectTitle oEllipsis">McDonalds.hr Homepage Slider</a>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="oJpPagination"><a class="jp-current">1</a>
+                                <span class="jp-hidden">...</span><a>2</a><a class="jp-previous jp-disabled">«</a><a class="jp-next">»</a>
+                            </div>
+                        </section>
+
+
+
+                        <section class="oListLite" id="profileEmploymentHistorySection">
+                            <h2 class="oH2Lite">Recent Employment History</h2>
+                            <article class="">
+                                <h1 class="oRowTitle">
+                                    web developer
+                                    <span class="oHMin">freelancing</span>
+                                </h1>
+                                <div class="oSupportInfo">
+                                    July 2012 - Present</div>
+                                <div data-id="1901632">
+                                    Freelancing, mostly in Django, WordPress and PhoneGap.</div>
+                            </article>
+                            <article class="">
+                                <h1 class="oRowTitle">
+                                    developer
+                                    <span class="oHMin">Kolektiva</span>
+                                </h1>
+                                <div class="oSupportInfo">
+                                    December 2011 - June 2012</div>
+                                <div data-id="1262864">
+                                    <span class="jsTruncated">Front and back-end and developer in a 5-member team that supports daily deal sites in eight different countries. All eight websites are members of Kolektiva group witch is in tern owned by Rebate networks, a major player in daily deal sites in Europe, Ame&nbsp;…&nbsp;
+                                        <span class="oMore oMoreSmall">more</span>
+                                    </span>
+                                    <span class="jsFull isHidden">Front and back-end and developer in a 5-member team that supports daily deal sites in eight different countries. All eight websites are members of Kolektiva group witch is in tern owned by Rebate networks, a major player in daily deal sites in Europe, America and Asia.&nbsp;&nbsp;
+                                        <span class="oMore oMoreSmall">less</span>
+                                    </span>
+                                </div>
+                            </article>
+                            <article class="">
+                                <h1 class="oRowTitle">
+                                    CTO
+                                    <span class="oHMin">Hi-tech</span>
+                                </h1>
+                                <div class="oSupportInfo">
+                                    September 2010 - November 2011</div>
+                                <div data-id="1262857">
+                                    PHP developer, later CTO in Hi-tech, <a href="https://www.odesk.com/leaving-odesk?ref=http%3A%2F%2Fwww.hi-tech.hr" title="You are about to go to a URL outside odesk.com" target="_blank">www.hi-tech.hr</a>, a small business in Croatia (10 people), doing various web projects. Mostly web sites based on WordPress, also some Facebook apps and games.</div>
+                            </article>
+                        </section>
+
+                        <section class="oListLite" id="profileEducationSection">
+                            <h2 class="oH2Lite">Education</h2>
+
+                            <article class="">
+                                <h1 class="oRowTitle">
+                                    Masters, Physics
+                                    <span class="oHMin">
+                                        Univercity of Zagreb, physics department</span>
+                                </h1>
+                                <div class="oSupportInfo">
+                                    2005 - Present</div>
+                                <p data-id="924044">
+                                    Studying physics, 5-year integrated masters program, currently at 4th year, taking it slow because of web development work.</p>
+                            </article>
+                            <article class="">
+                                <h1 class="oRowTitle">
+                                    Diploma, Chemistry, Ecology, Physics
+                                    <span class="oHMin">
+                                        Chemistry School</span>
+                                </h1>
+                                <div class="oSupportInfo">
+                                    2000 - 2004</div>
+                                <p data-id="924042">
+                                    <span class="jsTruncated">Graduated from Chemistry School, class Ecology technician, with highest grades. Taken interest in physics, astronomy, chemistry and computer sciences during school. Attended number of regional competitions as well as two international competitions - Scien&nbsp;…&nbsp;
+                                        <span class="oMore oMoreSmall">more</span>
+                                    </span>
+                                    <span class="jsFull isHidden">Graduated from Chemistry School, class Ecology technician, with highest grades. Taken interest in physics, astronomy, chemistry and computer sciences during school. Attended number of regional competitions as well as two international competitions - Science Expo (Moscow 2003) and European Laboratory competition 2002 in Ljubljana.&nbsp;&nbsp;
+                                        <span class="oMore oMoreSmall">less</span>
+                                    </span>
+                                </p>
+                            </article>
+                        </section>
+
+                        <section class="oListLite" id="profileOtherExperiencesSection">
+                            <h2 class="oH2Lite">Other Experience</h2>
+
+
+                            <article class="">
+                                <h1 class="oH4">VSA 2008 - 2011</h1>
+                                <p>Assistant and team-leader of Visnjan School of Astronomy, a summer school for gifted children centered around astronomy, but entering various fields of science and technology.
+                                    <br>
+                                    <br>Projects:
+                                    <br>
+                                    <br>Cosmic ray detector (assistant to prof. Galovic)
+                                    <br>
+                                    <a href="https://www.odesk.com/leaving-odesk?ref=http%3A%2F%2Fwww.astro.hr%2Fvsa2008%2Fcosmic.htm" title="You are about to go to a URL outside odesk.com" target="_blank">http://www.astro.hr/vsa2008/cosmic.htm</a>
+                                    <br>
+                                    <br>Astronomy Dome automation (project leader)
+                                    <br>
+                                    <a href="https://www.odesk.com/leaving-odesk?ref=http%3A%2F%2Fwww.astro.hr%2Fvsa2009%2Fprojects.htm%23dome" title="You are about to go to a URL outside odesk.com" target="_blank">http://www.astro.hr/vsa2009/projects.htm#dome</a>
+                                    <br>
+                                    <br>Telescope automation (team leader, work in progress)
+                                    <br>
+                                    <a href="https://www.odesk.com/leaving-odesk?ref=http%3A%2F%2Fwww.astro.hr%2Fvsa2010%2Fprojects.htm" title="You are about to go to a URL outside odesk.com" target="_blank">http://www.astro.hr/vsa2010/projects.htm</a>
+                                    <br>
+                                    <a href="https://www.odesk.com/leaving-odesk?ref=http%3A%2F%2Fwww.astro.hr%2Fvsa2011%2Fprojects.htm" title="You are about to go to a URL outside odesk.com" target="_blank">http://www.astro.hr/vsa2011/projects.htm</a>
+                                </p>
+                            </article>
+                        </section>
+
+                    </div>
+                </div>
+                <aside class="oSide">
+                    <section class="oSideSection" id="applicationDetailsClientActions">
+                        <h1 class="oHidden">Application actions</h1>
+
+
+
+                        <section id="applicantsActions" class="txtCenter jsApplicantActions">
+
+                            
+                            <div class="oDropdown" dropdown-menu>
+                                
+                                <button title="Contact"  ng-disabled="invited[key] === key" class="oBtn oBtnSecondary oBtnJumbo jsContactContractor oDropdownBtn" ng-click="inviteUser(user); messaging = true;" ng-class="{messaging: messaging === true}" invite><i class="oCheckmarkIcon" ng-show="invited[key] === key"></i><span ng-bind="invited[key] === key && 'Invitation sent' || user.messaged === true && 'Hire (send offer)' || 'Send Message'"></span></button>
+
+                                <i class="oBtn oBtnSecondary oBtnJumbo oDropdownIcon" ng-click="toggleSelect()"></i>
+                                <ul class='oDropdownMenu oDropdownLrg oTxtMed txtLeft' ng-show="isOpen">
+                                    <li>Save Freelancer</li>
+                                    <li>Start trial project</li>
+                                    <li>Decline applicant</li>
+                                </ul>
+                            </div>
+                            
+
+                            <div class="oSendMessage jsSendMessage"></div>
+                            <div class="oAtsSubActions">
+                                <div class="jsReportToOdesk277313306"></div>
+                                <div class="txtLeft">
+                                     <!--<ul>
+                                        <li class="oTxtMed">
+                                           <a ng-hide="user.messaged && activeDay === 3" id="applicationDetailsClientActionHireNowF2687" class="db">Hire Now</a>
+                                        </li>
+                                        <li class="oTxtMed">
+                                            <a id="applicationDetailsClientActionHireNowF2687" class="db">Hide</a>
+                                        </li>
+                                    </ul>-->
+                                </div>
+                            </div>
+                            <input type="hidden" id="applicantId" value="277313306">
+                        </section>
+                        <section id="tempApplicantsActionsUnhide" class="txtCenter jsApplicantHidden isHidden">
+                            <h1 class="isHidden">Hidden</h1>
+                            <p>You have chosen to hide this application from your list. Please unhide before taking any other action.</p>
+                            <p><a class="oBtn oBtnPrimary jsLogClickEvent" id="jsDoUnhideAtsShortlistingExperiment" href="/applications/277313306/unarchive/" title="" data-reference="277313306" data-jobreference="~016a138f4adc868c7e" data-event-type="unhide">Unhide</a>
+                            </p>
+                            <input type="hidden" id="applicantId" value="277313306">
+                        </section>
+
+                    </section>
+
+                    <section class="oSideSection">
+                        <h3 class="oH3 oMute oH3Lite">Work history</h3>
+                        <ul class="oPlainList">
+                            <li>
+                                <strong class="oTxtMed" ng-bind="user.feedback | number:2"></strong>
+                                <div class="oStarsContainer" data-content="4.74 stars" data-class-name="oHelpTip" data-delay="{show: 300, hide: 400}" data-rel="flyout">
+                                    <div class="oStarsValue" style="width:94.710366024785%"></div>
+                                </div>
+                            </li>
+
+                            <li class="oTxtMed">
+                                <strong class="oTxtMed">1,109</strong>
+                                <span class="oMute">hours worked</span>
+                            </li>
+                            <li class="oTxtMed">
+                                <strong class="oTxtMed">19</strong>
+                                <span class="oMute">jobs</span>
+                            </li>
+                            <li class="oTxtMed" data-content="100% of past clients would rehire or recommend this freelancer" data-width="230px" data-class-name="oFlyoutMed" data-rel="flyout">
+                                <strong class="oTxtMed" id="jsHireAgainValue">100%</strong>
+                                <span class="oMute">Recommended</span>
+                            </li>
+                        </ul>
+                    </section>
+
+
+
+                    <section>
+                        <h3 class="oH3 oMute oH3Lite">Availability</h3>
+                        <ul class="oPlainList">
+                            <li class="oTxtMed">
+                                <strong>
+                                    Available</strong>
+                            </li>
+                            <li class="oTxtMed">
+                                <strong>
+                                    Full time</strong>
+                                <span class="oMute">
+                                    30+ hrs / week</span>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h3 class="oH3 oMute oH3Lite">Languages</h3>
+                        <ul class="oPlainList">
+                            <li>
+                                <strong>English</strong>
+                                <span class="oMute">- Fluent</span>
+                                <div class="oMute oTxtSmall">
+                                    <strong>Self-Assessed</strong>
+                                </div>
+                            </li>
+                            <li>
+                                <strong>Croatian</strong>
+                                <span class="oMute">- Native</span>
+                                <div class="oMute oTxtSmall">
+                                    <strong>Self-Assessed</strong>
+                                </div>
+                            </li>
+                        </ul>
+                    </section>
+
+                </aside>
+                <span class="oRight oMute isHidden" id="successfulFlaggingMessage" style="height: 31px;">Thanks for flagging!</span><a data-userid="fhrzenjak" data-flaggedsubitem="jobapplication" data-flaggedsubitemid="277313306" id="flaggingWidget" class="oMutedLink" data-rel="flyout" data-reveal="#flaggingContainer" data-placement="bottom" data-trigger="click">
+        Flag as inappropriate</a>
+                <aside class="oHidden" id="flaggingContainer">
+                    <h1 class="oH3">Flag as inappropriate</h1>
+                    <p class="oFormWarning isHidden">Sorry, Flagging is temporarily unavailable</p>
+                    <form class="jsFlagsList">
+                        <label class="oOpt oOptLbl">
+                            <input type="checkbox" value="5" id="flagId5">SPAM</label>
+                        <label class="oOpt oOptLbl">
+                            <input type="checkbox" value="6" id="flagId6">Contractor requesting to work outside oDesk</label>
+                    </form>
+                    <footer>
+                        <button class="oBtn oBtnPrimary">Submit</button>
+                        <button class="oBtn oBtnCancel jsFlyoutHide">Cancel</button>
+                    </footer>
+                </aside>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="container">
+    <h1 class="oH1Huge">Mobile Developers</h1>
+    <div ng-controller="searchController">
+        <form class="oFormSearch form-group" ng-submit="search(query)">
+            <div class="input-group input-group-search">
+                <label class="input-group-addon" for="search">
+                    <span class="glyphicon air-icon-search"></span>
+                </label>
+                <input name="query" ng-model="query" class="form-control" placeholder="Search freelancers" type="search">
+                <div class="input-group-addon p-0-right">
+                    <button class="btn btn-default">Search</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div ng-class="{active: $state.includes('atsHome.suggestions.profile')}" class="animated eo-block-dark eo-block-wrapper" current-path>
+            <div class="eo-blocker eo-block-default" ng-show="loading">
+                <div class="eo-block-message">Loading</div>
+            </div>
+            <div class="content" ui-view></div>
+    </div>
+</div>
+
+

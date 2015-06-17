@@ -1,0 +1,166 @@
+<div class="eo-blocker eo-block-default eo-block-large" ng-show="loading">
+    <div class="eo-block-message">Loading</div>
+</div>
+<div class="air-card p-sm-bottom p-md-top" ng-controller="TagController as tag">
+    <div class="dropdown">
+        <div class="filter m-md-top">
+            <a>
+                <span>Development - Mobile development</span>
+            </a>
+            <div class="arrow"></div>
+            <div class="drop-down" ng-show="open7">
+            </div>
+        </div>
+    </div>
+    <div class="dropdown" ng-show="dropdownTwo" multiselect> 
+        <div class="filter m-md-top" ng-click="toggleSelect()" ng-class="{active: isPopupVisible}" >
+            <a>
+                <span ng-show="filterData.tasks.length">Choose a task</span>
+                <strong ng-show="!filterData.tasks.length">Tasks - </strong>
+                <span class="capitalize" ng-repeat="(value, key) in filterData.tasks" ng-bind="( value | prettyText ) + ($last ? '' : ',&nbsp;' )"></span>
+            </a>
+            <div class="arrow"></div>
+        </div>
+        <div class="drop-down" ng-show="isPopupVisible">
+            <taskrole-set class="text-center"></taskrole-set>
+        </div>
+    </div>
+    <div class="dropdown" ng-show="dropdownOne" multiselect>
+        <div class="filter m-md-top" ng-click="toggleSelect()" ng-class="{active: isPopupVisible}">
+            <a>
+                <span ng-show="filterData.frameworks.length">Choose a platform</span>
+                <strong ng-show="!filterData.frameworks.length">Frameworks - </strong>
+                <span class="capitalize" ng-repeat="(value, key) in filterData.frameworks" ng-bind="( value | prettyText ) + ($last ? '' : ',&nbsp;' )"></span>
+            </a>
+            <div class="arrow"></div>
+        </div>
+        <div class="drop-down pos-right" ng-show="isPopupVisible">
+            <platdev-set class="text-center"></platdev-set>
+        </div>
+    </div>
+    <div class="dropdown" ng-show="dropdownThree === true">
+        <div class="filter m-md-top" ng-click="open3 = !open3" ng-init="open3 = false" ng-class="{active: open3}">
+            <a>
+                <span ng-show="!objLength(searchTags.Tags.experiences).length && !objLength(searchTags.Tags.types).length">Choose a role or task</span>
+                <span ng-repeat="(experience, key) in filterSelected(searchTags.Tags.experiences)" ng-bind="experience + (($last && !objLength(searchTags.Tags.types).length) ? '' : ',&nbsp;' )"></span>
+                <span ng-repeat="(type, key) in filterSelected(searchTags.Tags.types)" ng-bind="type + ($last ? '' : ',&nbsp;' )"></span>
+            </a>
+            <div class="arrow"></div>
+            <div class="drop-down" ng-show="open3 === true">
+                <xpdetails-set class="text-center"></xpdetails-set>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="row ani-transition" ng-class="{condensed: tab === 4}">
+        <div class="col-md-8 col-md-offset-2 text-center">
+            <div class="ani-transition" ng-class="{invisible: tab === 4}">
+                <span class="dot" ng-class="{active : tab === 1}" ng-click="tab = 1"></span>
+                <span class="dot" ng-class="{active : tab === 2}" ng-click="tab = 2"></span>
+                <span class="dot" ng-class="{active : tab === 3}" ng-click="tab = 3"></span>
+            </div>
+                <taskrole-set class="animated" ng-show="tab === 1"></taskrole-set>
+                <platdev-set class="animated" ng-show="tab === 2"></platdev-set>
+                <xpdetails-set class="animated" ng-show="tab === 3"></xpdetails-set>
+                <jobpost-set class="animated" ng-show="tab === 4"></jobpost-set>
+            </div>
+        </div>
+</div>
+<div class="air-card m-md-bottom p-0-top-bottom" ng-controller="resultsController as results">
+    <div class="row p-lg-top-bottom" ng-show="!searchResultsFiltered.length">
+        <div class="col-md-8 col-md-offset-2 text-center"> 
+            <h1 class="m-md-bottom">Dang, no matching freelancers</h2>
+            <div class="text-muted p-med">Try an earlier <a ng-click="back()">query</a> or try another query</div>
+        </div>
+    </div>
+        <article ng-repeat="(key, result) in searchResultsFiltered">
+            <div class="row p-lg-top-bottom">
+
+                <div class="col-md-2">
+                    <div class="col-md-10 p-0-left">
+                        <p class="text-center m-0-bottom">
+                            <a ng-href="https://www.upwork.com/users/_{{result.data.dev_recno_ciphertext}}"><img class="avatar avatar-lg m-0-top m-0-left" ng-src="{{result.data.dev_portrait_100}}"></a>
+                        </p>
+                    </div>
+                    <div class="col-md-10 p-sm-left">
+                        <a class="btn btn-default m-0-left-right m-sm-top-bottom p-md-left-right ng-pristine ng-untouched ng-valid ng-binding ng-isolate-scope eo-button-save btn-sm">Save</a>
+                    </div>
+                </div>
+                <div class="col-md-7 p-sm-left">
+                    <div>
+                    <span class="oProfileTileTitle h3 m-0-top-bottom">
+                        <a href="https://www.upwork.com/users/_{{result.data.dev_recno_ciphertext}}" title="{{result.data.dev_short_name}}" ng-bind="result.data.dev_short_name"></a>
+                    </span>
+                    <h2 class="m-xs-top m-0-bottom" ng-bind="result.data.dev_profile_title"></h2>
+                    <p class="m-md-top m-0-bottom">
+                        <span class="glyphicon air-icon-location m-0-left"></span>
+                        <strong ng-bind="result.data.dev_country"></strong>
+                        <span class="text-muted">
+                        
+                        <span class="jsLastActivity" ng-bind="result.data.dev_last_activity">
+                        </span>
+                        <span>
+                            Tests: <span class="btn-link fw-200" ng-bind="result.data.dev_test_passed_count">0</span>
+                        </span>
+                        <span>
+                            Portfolio: <span class="btn-link fw-200" ng-bind="result.data.dev_portfolio_items_count">0</span>
+                        </span>
+                        </span>
+                    </p>
+                    <p class="m-md-top m-0-bottom" ng-bind="result.data.dev_blurb | words:27"></p>
+                    </div>
+                    <ul class="list-inline separated m-md-top ng-isolate-scope">
+                    <li ng-repeat="skill in result.data.skills | limitTo:4">
+                        <a ng-bind="skill.skl_pretty_name" class="o-tag-skill m-0">
+                        </a>
+                    </li>
+                    </ul>
+                </div>
+                <div class="col-md-3 text-right">
+                    <div class="col-md-12 p-0-right">
+                        <a class="btn btn-default jsContactBtn m-0-top-bottom m-0-left">Contact</a>
+                    </div>
+                    <div class="col-md-12 p-0-right">
+                        <div class="m-sm-bottom m-lg-top fs-lrg">
+                            <strong ng-bind="'$' + (result.data.dev_bill_rate | number:2)"></strong>
+                            <span class="text-muted m-xs-left"> /hr</span>
+                        </div>
+                        <div class="m-sm-bottom fs-lrg">
+                            <strong ng-bind="result.data.dev_total_hours | number:0">0</strong>
+                            <span class="text-muted m-xs-left"> Hours</span>
+                        </div>
+                        <div class="m-sm-bottom fs-lrg"> 
+                            <strong ng-bind="result.nss100 ? (result.nss100 | percentage:0) : 'New to upwork' ">No score yet</strong>
+                            <span class="text-muted m-xs-left" ng-hide="!result.nss100"> Job Success</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+        </article>
+        <pagination ng-show="searchResults.length > 10" total-items="searchResults.length" max-size="maxSize" ng-model="currentPage" ng-change="pageChanged(currentPage)"></pagination>
+</div>
+<div id="ouibounce-modal" style="display: none;" oui-bounce>
+        <div class="underlay"></div>
+        <div class="modal">
+            <button class="oPreviewDialogCloseBtn oRight jsDialogClose"></button>
+            <h1 class="oH1 txtCenter">Low on time? We get it. Why not let us invite some freelancers for you?</h3>
+                    <div class="oAttentionIcon">
+                    <i class="oIconEnvelope oIcon"></i>
+                    <i class="oIconVerified oIcon"></i>
+                    </div>
+                    <div class="oTxtMed txtCenter">
+
+                    <form>
+
+                        <div class="oFieldValue">
+                            <input type="button" class="oBtn oBtnPrimary oBtnLarge oTxtMed" value="Yes! Invite the best freelancers for me">
+                            <a href="" class="oBtn oBtnCancel">No thanks</a>
+                        </div>
+
+                    </form>
+                    </div>
+        </div>
+</div>
+<div class="profile-overlay animated" ui-view="profile" ng-show="$state.includes('atsHome.search.profile')" ui-sref="atsHome.search"></div>
+

@@ -1,0 +1,29 @@
+<div class="tagGroup">
+    <div class="oTagSet">
+    <!-- Platform -->
+        <label class="oBtnBox oBtnBoxSocial jsFancyCheckboxItem oPointer" ng-repeat="(platform, key) in searchTags.Tags.platforms" ng-class="{isActive: key}" >
+            <input type="checkbox" ng-model="searchTags.Tags.platforms[platform]" ng-change="platformSelect(searchTags.Tags.platforms[platform], platform); " tag-selected>
+            <i class="oImg oSocialImg oIconWindows"></i>
+            <span ng-bind="platform"></span>
+        </label>
+    </div>
+    <!-- Devices -->
+    <div class="oTagSet" ng-show="deviceSelected">
+        <label class="oBtnBox oBtnBoxSocial jsFancyCheckboxItem oPointer" ng-repeat="(device, key) in searchTags.Tags.devices" ng-class="{isActive: searchTags.Tags.devices[device]}">
+            <input type="checkbox" ng-model="searchTags.Tags.devices[device]" ng-change="deviceSelect(searchTags.Tags.devices[device])" tag-selected>
+            <i class="oImg oSocialImg oIconWindows"></i>
+            <span ng-bind="device"></span>
+        </label>
+    </div>
+    <!-- Environment -->
+    <div class="oTagSet" ng-show="environmentShow">
+        <label class="oBtnBox oBtnBoxSocial jsFancyCheckboxItem oPointer" ng-repeat="(environment, key) in searchTags.Tags.environments" ng-class="{isActive: searchTags.Tags.environments[environment]}">
+            <input type="checkbox" ng-model="searchTags.Tags.environments[environment]" ng-change="environmentSelect(searchTags.Tags.environments[environment])" tag-selected>
+            <i class="oImg oSocialImg oIconWindows"></i>
+            <span ng-bind="environment"></span>
+        </label>
+    </div>
+    <div class="p-med">
+        <button class="btn btn-primary" ng-disabled="validateCheck(searchTags.Tags)">UPDATE RESULTS &amp; CONTINUE</button>
+    </div>
+</div>

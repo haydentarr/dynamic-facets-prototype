@@ -1,0 +1,37 @@
+<article class="oGuidance oMed">
+    <i class="oImg oATSIconBig" ng-class="iconType"></i>
+    <div class="oBd">
+        <h1 class="oH1Huge" ng-bind="pageTitle"></h1>
+        <p class="oMute oTxtLarge" ng-bind-html="pageSubtitle | unsafe">
+        </p>
+    </div>
+</article>
+
+<section class="oListLite jsSearchResults oATS" ng-controller="ApplicantsController as applications">
+    <div class="articleHeader" ng-controller="MessagesController">
+        <standard-tile ng-if="activeDay === 3"></standard-tile>
+    </div>
+    <!--<div class="articleHeader" ng-controller="RecommendedController">
+        <recommended-tile ng-if="activeDay >= 2"></recommended-tile>
+    </div>-->
+    <div class="articleHeader" ng-controller="otherController">
+        <standard-tile ng-if="activeDay >= 2"></standard-tile>
+    </div>
+    <div class="articleHeader" ng-controller="hiddenController">
+        <standard-tile ng-if="hasHidden === true"></standard-tile>
+    </div>
+    <div class="articleHeader" ng-controller="pendingController">
+        <standard-tile ng-if="invitedFreelancers.length >= 1"></standard-tile>
+    </div>
+    <div class="articleHeader" ng-controller="withdrawnController" scroll-bookmark="withdrawn">
+        <standard-tile ng-if="activeDay === 3"></standard-tile>
+    </div>
+    <div class="profile-overlay animated" ui-view="application" ng-show="$state.includes('atsHome.applicants.application')" ui-sref="atsHome.applicants"></div>
+</section>
+
+<section class="oMessageContainer" ng-controller="messageController" data-user-id="{{key}}">
+    <section style="display:none;">
+        <div class="oMessageModule ng-hide-remove" ng-show="showMessage" ng-class="{minimize: min === true, sent: sent === true, hidden: hidden === true}" message-module>
+        </div>
+    </section>
+</section>

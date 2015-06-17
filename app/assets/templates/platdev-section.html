@@ -1,0 +1,17 @@
+    <h1 class="p-x-sml">What framework’s &amp; are you using?</h2>
+    <div class="text-muted p-lrg">Select relevant tags to improve your results</div>
+
+
+    <div class="oTagSet" ng-init="limit = 6">
+    <!-- Roles -->
+        <label class="oBtnBox oBtnBoxSocial jsFancyCheckboxItem oPointer m-sm-right capitalize" ng-repeat="framework in frameworks | orderBy: '-value' | limitTo: limit as results" ng-class="{active: filterData.frameworks[framework.key]}" ng-click="checkChange(filterData.frameworks)">
+            <input type="checkbox" name="dynamicframeworks" ng-model="filterData.frameworks[framework.key]"/>
+                <i class="oImg oSocialImg oIconWindows"></i>
+            <strong ng-bind="framework.key | prettyText"></strong>
+            <span class="text-muted" ng-bind="'(' + (framework.value) + ')' "></span>
+        </label>
+    </div>
+            <a class="btn btn-link center-block m-0-top-bottom m-0-left-right" ng-hide="results.length === framework.length" 
+        ng-click="limit = limit +5">Show more (5)</a>
+        <button type="submit" class="btn btn-primary m-0-left m-sm-top" ng-disabled="!filterData.frameworks" ng-click="updateFilters(filterData);">Update results</button>
+

@@ -1,0 +1,20 @@
+development:
+  adapter: postgresql
+  database: my_ats_development
+  pool: 5
+  timeout: 5000
+  UPWORK_API_KEY: 8c4b191198ee7c9b5e00a7ca4c19f917
+  UPWORK_SECRET: e0942b0190f4185a
+test:
+  adapter: postgresql
+  database: my_ats_test
+  pool: 5
+  timeout: 5000
+
+production:
+  adapter: postgresql
+  database: my_ats_production
+  pool: 5
+  timeout: 5000
+  UPWORK_API_KEY: 8c4b191198ee7c9b5e00a7ca4c19f917
+  UPWORK_SECRET: e0942b0190f4185a

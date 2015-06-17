@@ -1,0 +1,127 @@
+
+        <h2 class="oH2Low oH2Border" ng-class="{active:openSection === true}" scroll-if="userWithdrew === true" >
+            <div class="innerWrap">
+                <!--<i class="oHToggle animated" ng-class="{isCollapsed:openSection === false}"></i>
+                <strong class="ib oTxtMega txtMiddle" ng-bind="sectionCount"></strong>
+                <span class="ib oTxtMega txtMiddle" ng-bind="sectionTitle"></span>-->
+
+                <select ng-click="$event.stopPropagation();" ng-show="tileSort === true" class="oInputInline jsLogChangeEvent oSortInput">
+                    <option value="s_bestmatch_score;desc" selected="">Best Match</option>
+                    <option value="s_ctime;desc">Newest Applicants</option>
+                    <option value="s_ctime;asc">Oldest Applicants</option>
+                    <option value="s_feedback_score;desc">Feedback</option>
+                    <option value="s_total_hours;desc">oDesk Hours</option>
+                    <option value="s_pay_rate;asc">Rate (low to high)</option>
+                    <option value="s_pay_rate;desc">Rate (high to low)</option>
+                </select>
+            </div>
+        </h2>
+
+        <section ng-show="openSection" class="applicantContent">
+            <article ng-repeat="(key, user) in applicantSection" class="oContractorTile jsSimilarTile oProfileTileLead searchResultHover animated" id="profile_5341051" ui-sref=".application({userId : {{key}} })">
+
+                <div class="cols tile-inner">
+                    <div class="col col1of8 oImg">
+                        <img id="portrait_1" class="oPortraitLarge" alt="user.name" ng-src="{{user.image}}">
+                    </div>
+
+                    <div class="cols col col7of8">
+                        <div class="cols p">
+                            <div class="col col5of8">
+                                <hgroup class="oProfileTileTitle">
+                                    <h1 class="oRowTitle">
+                                        <a title="Lee C." class="jsContractorProfileLink oHInline" data-user-id="{{key}}" ui-sref=".application({userId : {{key}} })" ng-bind="user.name"></a>
+                                    </h1>
+                                    <h3 ng-bind="user.title"></h3>
+                                </hgroup>
+                            </div>
+
+                            <div class="col col3of8 oRight txtRight npad">
+
+                                <div class="oDropdown" ng-hide="isHidden" dropdown-menu>
+                                     <button title="Contact"  ng-disabled="invited[key] === key" class="oBtn oBtnSecondary jsContactContractor oDropdownBtn" ng-click="inviteUser(user); messaging = true; user.messaged = true; $event.stopPropagation();" ng-class="{messaging: messaging === true}" invite><i class="oCheckmarkIcon" ng-show="invited[key] === key"></i><span ng-bind="invited[key] === key ? 'Invitation sent' : 'Send message'"></span></button>
+
+                                    <i class="oBtn oBtnSecondary oDropdownIcon" ng-click="toggleSelect(); $event.stopPropagation();"></i>
+                                    <ul class='oDropdownMenu' ng-show="isOpen">
+                                        <li>Save Freelancer</li>
+                                        <li>Start trial project</li>
+                                        <li>Hire (send offer)</li>
+                                        <li>Decline applicant</li>
+                                    </ul>
+                                </div>
+                                    <span ng-show="canHide" class="oBtn oBtnSecondary oHideButton jsHide jsLogClickEvent" data-event-type="hide" data-id="277524504" ng-click="moveUser(key, applicantSection, hiddenApplicants); updateCount()"><i class="oXIcon jsNoToggle"></i>
+                                </span>
+                                <button title="Contact" ng-show="isHidden" class="oBtn oBtnSecondary jsContactContractor oDropdownBtn" ng-click="moveUser(key, hiddenApplicants, recommendedApplicants); updateCount(); hiddenChange(); $event.stopPropagation();">Unhide</button>
+                            </div>
+                        </div>
+
+                        <div class="cols">
+                            <div class="col col5of8">
+
+                                <div class="p oTxtEnlarged">
+                                    <i class="oIcon oLocationIcon">$</i><strong class="jsCountry" ng-bind="user.location">
+                                    </strong>
+                                    <span class="oNull">
+                                    &nbsp;-&nbsp; Last active:&nbsp;
+                                    <span class="jsActivity" ng-bind="user.lastActive"></span>
+                                    &nbsp;-&nbsp; Tests:
+                                    <a class="jsTests" href="#" ng-bind="user.test"></a>
+                                    &nbsp;-&nbsp; Portfolio:
+                                    <a class="jsPortfolio" href="#" ng-bind="user.portfolio">31</a>
+                                    </span>
+                                </div>
+
+                                <div class="oDescription">
+                                    <div class="jsTruncated">
+                                        <span class="oTxtEnlarged" ng-hide="user.sent === true;" ><span ng-bind="user.description | words:27"></span><span class="oMore oMoreSmall">more</span></span>
+                                        <span class="oTxtEnlarged" ng-show="user.sent === true;"><i class="oIcon oMessagingIcon txtMiddle">à</i>&nbsp;<span ng-bind="noticeText"></span><span class="oMore oMoreSmall"> view messages</span></span>
+                                        
+                                    </div>
+                                    <div class="jsFull isHidden">
+                                        <div>To build a Top 1 app, this is my rule. ✪✪✪✪✪ I LOVE Mobiles. Mobiles Will Change The World With Creative Ideas and Endless Efforts. ✪✪✪✪✪ I am a programer with experience in Unity3D, Corona SDK, Xamarin. Self-directed and motivated Mobile Developer with 7+ years' experience in Objective C/XCode, Java/J2EE, C/C++ and PHP technologies. Excellent at developing and maintaining client/server applications. I am hardworking and a fast learner with good communication skills and a strong design background. Client satisfaction and quality work are my TOP PRIORITIES. I have strong experience in the iPhone(iOS6 + iPhone5)/iPad(iPad mini) and Android development as well as backend web service. I also have some experience in the following areas: SQLite database, Restful JSON based Web Service, Social Network - Facebook, Twitter, Google API, Audio Streaming, Video Streaming. Development Area: 1) Applications ✔ iPhone, iPod, iPad, Android, Titanium, PhoneGap ✔ design, cocoa, cocoa-touch, obje&nbsp;…&nbsp;</div>
+                                        <div>
+                                            <span class="oMore oMoreSmall">less</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            <div class="oSkills">
+                                <div class="jsSkills oSkills">
+                                    <a data-skill="objective-c" class="oSkill isVerified oTagSmall oTag" data-contractor="~01c95771650053def3" href="/contractors/?qs=objective-c">objective-c</a>  <a data-skill="iphone-app-development" class="oSkill oTagSmall oTag" data-contractor="~01c95771650053def3" href="/contractors/?qs=iphone-app-development">iphone-app-development</a>  <a data-skill="android-app-development" class="oSkill oTagSmall oTag" data-contractor="~01c95771650053def3" href="/contractors/?qs=android-app-development">android-app-development</a>  <a data-skill="corona-sdk" class="oSkill oTagSmall oTag" data-contractor="~01c95771650053def3" href="/contractors/?qs=corona-sdk">corona-sdk</a>
+                                    <a title="View all skills" href="/users/Super-Talented-Unity3D-Corona-Xamarin-Developer_%7E01c95771650053def3?tot=30&amp;pos=10">…</a> 
+                                </div>
+                            </div>
+                            </div>
+
+
+                            <div class="col txtRight col3of8 oRateFeedbackHours">
+                                <div class="oTxtLarge jsRate">
+                                    $
+                                    <span ng-bind="user.price | number:2"></span>
+                                    <span class="oRateTime">/hr</span>
+                                </div>
+
+                                <div class="oTxtLarge jsHours">
+                                    <span ng-bind="user.hours"></span>
+                                    <span class="oRateTime">hours</span>
+                                </div>
+
+                                <div class="nowrap">
+
+
+                                    <div class="oStarsContainer oStarsMedium" data-content="5.00 stars, based on 5 reviews" data-class-name="oHelpTip" data-delay="{show: 300, hide: 400}" data-rel="flyout">
+                                        <div class="oStarsValue" style="width:100%"></div>
+                                    </div>
+
+                                    <span class="oStarsTotal oStarsMedium" ng-bind="user.feedback | number:2"></span>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </article>
+        </section>

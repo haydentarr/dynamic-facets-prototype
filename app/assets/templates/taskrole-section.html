@@ -1,0 +1,15 @@
+    <!-- Roles -->
+    <h1 class="p-x-sml">Which tasks best fit your job?</h2>
+    <div class="text-muted p-med">Select relevant tags to improve your results</div>
+    <div class="oTagSet" ng-init="limit = 6">
+    
+        <label class="btn btn-default m-xs-top-bottom m-xs-left-right capitalize p-sm-left-right p-sm-top-bottom" ng-repeat="task in tasks | orderBy: '-value' | limitTo: limit as results" ng-class="{active: filterData.tasks[task.key]}" ng-click="checkChange(filterData.tasks)">
+            <input type="checkbox" name="dynamicTasks" ng-model="filterData.tasks[task.key]"/>
+                <i class="oImg oSocialImg oIconWindows"></i>
+            <strong ng-bind="task.key | prettyText"></strong>
+            <span class="text-muted" ng-bind="'(' + (task.value) + ')' "></span>
+        </label>
+    </div>
+            <a class="btn btn-link center-block m-0-top-bottom m-0-left-right" ng-hide="results.length === task.length" 
+        ng-click="limit = limit +5">Show more (5)</a>
+    <button type="submit" class="btn btn-primary m-0-left m-sm-top" ng-disabled="disabled" ng-click="updateFilters(filterData);">Update results</button>

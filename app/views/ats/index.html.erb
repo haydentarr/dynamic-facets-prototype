@@ -1,0 +1,147 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html ng-app="tracking">
+<head>
+    <title>Search Results</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<header class="header-navbar-skinny ng-scope" role="banner">
+    <nav role="navigation" class="primary-navbar navbar navbar-default">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-target="#skinny-nav">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/home/" class="navbar-brand" title="oDesk" target="_self"></a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="skinny-nav">
+                <ul class="nav navbar-nav" role="menu">
+                    <li>
+                        <a href="/e/jobs/" target="_self">
+                            Jobs
+                                                    </a>
+                    </li>
+                    <li class="active">
+                        <a href="/e/118/my-contractors" target="_self">
+                            Freelancers
+                                                    </a>
+                    </li>
+                    <li>
+                        <a href="/reports/manage" target="_self">
+                            How it works
+                                                    </a>
+                    </li>
+                     <li>
+                        <% if current_user %>
+                            Welcome
+                            <strong><%= current_user.name %></strong>
+                            <%= link_to 'Sign out', signout_path, id: "sign_out", class:"btn btn-success" %>
+                        <% else %>
+                            <%= link_to 'OdeskLogin', "/auth/upwork", id: "sign_in", class:"btn btn-success" %>
+                        <% end %> 
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown ng-scope">
+                        <a href="javascript:" class="dropdown-toggle">
+                            <span class="glyphicon air-icon-search"></span>
+                        </a>
+                    </li>
+                    <li class="dropdown">
+                        <a  href="javascript:" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true"><span class="glyphicon air-icon-question"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href="https://support.odesk.com/login">Help and Support</a>
+                            </li>
+                            <li>
+                                <a href="https://www.odesk.com/community/">Community and Forums</a>
+                            </li>
+                            <li>
+                                <a href="/disputes">
+                                    <span>Disputes</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">New On Twizzler</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li dropdown="" class="dropdown" on-toggle="toggleNotifications(open)">
+                        <a dropdown-toggle="" href="javascript:" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true"><span class="glyphicon air-icon-notifications"></span> <span class="badge badge-circle"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href="#">
+                                    <mark><strong>See All Notifications</strong></mark>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li dropdown="" class="dropdown account-dropdown">
+                        <a dropdown-toggle="" href="javascript:" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true"><span class="glyphicon air-icon-avatar"></span> <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <div class="container">
+                                    <div class="form-group">
+                                        <label>Status</label>
+                                        <div class="btn-group btn-group-justified" data-ng-click="$event.stopPropagation()" eo-halt="check($event)">
+                                            <label class="btn btn-primary ng-pristine ng-untouched ng-valid active" data-ng-model="dash.isOnline" btn-radio="'Online'">Online</label>
+                                            <label class="btn btn-primary ng-pristine ng-untouched ng-valid" data-ng-model="dash.isOnline" btn-radio="'Offline'">Offline</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li data-ng-click="selectCompany('1559487')">
+                                <a href="javascript:">
+                                    <img src="https://components.elance-odesk.com/images/nav/client-icon.png" class="avatar avatar-xs"> DASH
+                                </a>
+                            </li>
+                            <li data-ng-click="selectCompany('371862')">
+                                <a href="javascript:">
+                                    <img src="https://components.elance-odesk.com/images/nav/client-icon.png" class="avatar avatar-xs"> Double Jump
+                                </a>
+                            </li>
+                            <li data-ng-click="selectCompany('d1241744')">
+                                <a href="javascript:">
+                                    <img src="https://odesk-prod-portraits.s3.amazonaws.com/Users:haydentarr:PortraitUrl?AWSAccessKeyId=1XVAX3FNQZAFC9GJCFR2&amp;Expires=2147483647&amp;Signature=Tk2ptNJux7KMwYnW%2BUQkLgYgeLY%3D" class="avatar avatar-xs"> Hayden Tarr
+                                </a>
+                            </li>
+                            <li class="active" title="oDesk">
+                                <a href="javascript:">
+                                    <img src="https://components.elance-odesk.com/images/nav/client-icon.png" class="avatar avatar-xs"> oDesk
+                                </a>
+                            </li>
+                            <li data-ng-click="selectCompany('1052953')">
+                                <a href="javascript:">
+                                    <img src="https://components.elance-odesk.com/images/nav/client-icon.png" class="avatar avatar-xs"> Spaghetti Jones
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/UserSettings/profile">
+                                    <span class="glyphicon air-icon-settings"></span> Settings
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/logout"><span class="glyphicon air-icon-logout"></span> Logout</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+
+
+<body ng-class="{noScroll: $state.includes('atsHome.suggestions.profile') || $state.includes('atsHome.applicants.application')}">
+    <div id="main" role="main" ui-view>
+    </div>
+</body>
+
+</html>
+
