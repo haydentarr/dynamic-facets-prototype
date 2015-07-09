@@ -10,7 +10,9 @@ html, body {
     -webkit-font-smoothing: antialised;
     font-smoothing: always;
 }
-
+a:hover {
+	cursor: pointer;
+}
 .oLocationIcon {
     font-family: icon-worksregular;
     font-size: 21px;
@@ -1016,12 +1018,6 @@ body.noScroll {
 	width: 702px;
 }
 
-.eo-block-wrapper {
-  position: relative;
-}
-.eo-block-wrapper .eo-blocker.eo-block-default {
-  background-color: rgba(255, 255, 255, 0.85);
-}
 .eo-block-wrapper .eo-blocker {
   position: absolute;
   top: 0;
@@ -1091,4 +1087,12 @@ body.noScroll {
 }
 input[type="checkbox"]:focus {
 	outline: none;
+}
+
+hr {
+	border-color: #e0e0e0;
+}
+
+.btn.btn-default.checkbox .checkbox-replacement-helper {
+	margin-left: 0px;
 }

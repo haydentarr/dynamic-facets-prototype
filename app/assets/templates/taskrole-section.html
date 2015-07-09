@@ -1,10 +1,11 @@
-    <!-- Roles -->
-    <h1 class="p-x-sml">Which tasks best fit your job?</h2>
+<!-- Roles -->
+<h2 class="p-x-sml">Which tasks best fit your job?</h2>
     <div class="text-muted p-med">Select relevant tags to improve your results</div>
     <div class="oTagSet" ng-init="limit = 6">
     
-        <label class="btn btn-default m-xs-top-bottom m-xs-left-right capitalize p-sm-left-right p-sm-top-bottom" ng-repeat="task in tasks | orderBy: '-value' | limitTo: limit as results" ng-class="{active: filterData.tasks[task.key]}" ng-click="checkChange(filterData.tasks)">
+        <label class="btn btn-default m-xs-top-bottom m-xs-left-right capitalize p-sm-left-right p-sm-top-bottom checkbox" ng-repeat="task in tasks | orderBy: '-value' | limitTo: limit as results" ng-class="{active: filterData.tasks[task.key]}" ng-click="checkChange(filterData.tasks)">
             <input type="checkbox" name="dynamicTasks" ng-model="filterData.tasks[task.key]"/>
+            <span class="checkbox-replacement-helper"></span>
                 <i class="oImg oSocialImg oIconWindows"></i>
             <strong ng-bind="task.key | prettyText"></strong>
             <span class="text-muted" ng-bind="'(' + (task.value) + ')' "></span>

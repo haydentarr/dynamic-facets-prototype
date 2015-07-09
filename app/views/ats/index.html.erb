@@ -36,15 +36,7 @@
                             How it works
                                                     </a>
                     </li>
-                     <li>
-                        <% if current_user %>
-                            Welcome
-                            <strong><%= current_user.name %></strong>
-                            <%= link_to 'Sign out', signout_path, id: "sign_out", class:"btn btn-success" %>
-                        <% else %>
-                            <%= link_to 'OdeskLogin', "/auth/upwork", id: "sign_in", class:"btn btn-success" %>
-                        <% end %> 
-                    </li>
+
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown ng-scope">

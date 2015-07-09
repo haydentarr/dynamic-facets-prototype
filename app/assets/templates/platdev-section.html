@@ -1,17 +1,45 @@
-    <h1 class="p-x-sml">What framework’s &amp; are you using?</h2>
+<h2 class="p-x-sml">What level of experience is required?</h2>
     <div class="text-muted p-lrg">Select relevant tags to improve your results</div>
 
 
-    <div class="oTagSet" ng-init="limit = 6">
+    <div class="oTagSet">
     <!-- Roles -->
-        <label class="oBtnBox oBtnBoxSocial jsFancyCheckboxItem oPointer m-sm-right capitalize" ng-repeat="framework in frameworks | orderBy: '-value' | limitTo: limit as results" ng-class="{active: filterData.frameworks[framework.key]}" ng-click="checkChange(filterData.frameworks)">
-            <input type="checkbox" name="dynamicframeworks" ng-model="filterData.frameworks[framework.key]"/>
-                <i class="oImg oSocialImg oIconWindows"></i>
-            <strong ng-bind="framework.key | prettyText"></strong>
-            <span class="text-muted" ng-bind="'(' + (framework.value) + ')' "></span>
-        </label>
+        <div class="radio">
+            <label class="btn btn-default m-xs-top-bottom m-xs-left-right capitalize p-sm-left-right p-sm-top-bottom checkbox" ng-class="{active: filterData.experience === '0'}">
+                <input type="radio" ng-model="filterData.experience" value="0">
+                <span class="checkbox-replacement-helper">
+                </span>
+                Any experience
+            </label>
+        </div>
+        <div class="radio">
+            <label class="btn btn-default m-xs-top-bottom m-xs-left-right capitalize p-sm-left-right p-sm-top-bottom checkbox" ng-class="{active: filterData.experience === '1'}">
+                <input type="radio" ng-model="filterData.experience" value="1">
+                <span class="checkbox-replacement-helper">
+                </span>
+                Entry Level
+            </label>
+        </div>
+        <div class="radio">
+            <label class="btn btn-default m-xs-top-bottom m-xs-left-right capitalize p-sm-left-right p-sm-top-bottom checkbox" ng-class="{active: filterData.experience === '2'}">
+                <input type="radio" ng-model="filterData.experience" value="2">
+                <span class="checkbox-replacement-helper">
+                </span>
+               Intermediate
+            </label>
+        </div>
+        <div class="radio">
+            <label class="btn btn-default m-xs-top-bottom m-xs-left-right capitalize p-sm-left-right p-sm-top-bottom checkbox" ng-class="{active: filterData.experience === '3'}">
+                <input type="radio" ng-model="filterData.experience" value="3">
+                <span class="checkbox-replacement-helper">
+                </span>
+                Expert
+            </label>
+        </div>
     </div>
-            <a class="btn btn-link center-block m-0-top-bottom m-0-left-right" ng-hide="results.length === framework.length" 
-        ng-click="limit = limit +5">Show more (5)</a>
-        <button type="submit" class="btn btn-primary m-0-left m-sm-top" ng-disabled="!filterData.frameworks" ng-click="updateFilters(filterData);">Update results</button>
+            
+    {{filterData.experience | json}}
+
+    <button type="submit" class="btn btn-primary m-0-left m-sm-top" ng-disabled="!filterData.experience" ng-click="updateFilters(filterData);">Update results</button>
+
 

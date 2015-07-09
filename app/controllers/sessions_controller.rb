@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
- 
 
   # create session with new User or Existing user
   def create
@@ -15,8 +14,10 @@ class SessionsController < ApplicationController
 
   # destroy the session for User 
   def destroy
+
     session[:user_id] = nil
-    redirect_to '/#'
+    redirect_to  root_path
 
   end
+
 end
