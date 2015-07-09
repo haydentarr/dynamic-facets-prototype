@@ -1,5 +1,6 @@
-PATH
-  remote: /Users/Hayden/Dropbox/Public/OdeskApi-AngularOdesk/omniauth-upwork-1.0.0
+GIT
+  remote: https://github.com/haydentarr/upwork-omni.git
+  revision: b9219bc44eafc8c736abb2818678e49e3a2bb196
   specs:
     omniauth-upwork (2.0.0)
       json (~> 1.8.0)

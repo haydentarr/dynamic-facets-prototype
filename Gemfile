@@ -39,7 +39,7 @@ gem 'httparty'
 gem 'upwork-api'
 gem 'pry'
 
-gem 'omniauth-upwork', path: '/Users/Hayden/Dropbox/Public/OdeskApi-AngularOdesk/omniauth-upwork-1.0.0'
+gem 'omniauth-upwork', git: 'https://github.com/haydentarr/upwork-omni.git'
 
 gem 'figaro'
 
