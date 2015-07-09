@@ -42,6 +42,7 @@ gem 'pry'
 gem 'omniauth-upwork', git: 'https://github.com/haydentarr/upwork-omni.git'
 
 gem 'figaro'
+
 ruby "2.1.2"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
