@@ -24,7 +24,8 @@
     const debounce = (func, wait, immediate) => {
         let timeout;
         return () => {
-            const context = this, args = arguments;
+            const context = this; 
+            const args = arguments;
             const later = function() {
                 timeout = null;
                 if (!immediate) func.apply(context, args);
@@ -37,41 +38,41 @@
     };
 
     // Stores the Y position where the touch started
-    var startY = 0;
+    let startY = 0;
 
     // Store enabled status
-    var enabled = false;
+    let enabled = false;
 
-    var handleTouchmove = function(evt) {
+    const handleTouchmove = (evt) => {
         // Get the element that was scrolled upon
-        var el = evt.target;
+        let el = evt.target;
 
         // Check all parent elements for scrollability
         while (el !== document.body) {
             // Get some style properties
-            var style = window.getComputedStyle(el);
+            const style = window.getComputedStyle(el);
 
             if (!style) {
                 // If we've encountered an element we can't compute the style for, get out
                 break;
             }
 
-            var scrolling = style.getPropertyValue('-webkit-overflow-scrolling');
-            var overflowY = style.getPropertyValue('overflow-y');
-            var height = parseInt(style.getPropertyValue('height'), 10);
+            const scrolling = style.getPropertyValue('-webkit-overflow-scrolling');
+            const overflowY = style.getPropertyValue('overflow-y');
+            const height = parseInt(style.getPropertyValue('height'), 10);
 
             // Determine if the element should scroll
-            var isScrollable = scrolling === 'touch' && (overflowY === 'auto' || overflowY === 'scroll');
-            var canScroll = el.scrollHeight > el.offsetHeight;
+            const isScrollable = scrolling === 'touch' && (overflowY === 'auto' || overflowY === 'scroll');
+            const canScroll = el.scrollHeight > el.offsetHeight;
 
             if (isScrollable && canScroll) {
                 // Get the current Y position of the touch
-                var curY = evt.touches ? evt.touches[0].screenY : evt.screenY;
+                const curY = evt.touches ? evt.touches[0].screenY : evt.screenY;
 
                 // Determine if the user is trying to scroll past the top or bottom
                 // In this case, the window will bounce, so we have to prevent scrolling completely
-                var isAtTop = (startY <= curY && el.scrollTop === 0);
-                var isAtBottom = (startY >= curY && el.scrollHeight - el.scrollTop === height);
+                const isAtTop = (startY <= curY && el.scrollTop === 0);
+                const isAtBottom = (startY >= curY && el.scrollHeight - el.scrollTop === height);
 
                 // Stop a bounce bug when at the bottom or top of the scrollable element
                 if (isAtTop || isAtBottom) {
@@ -90,28 +91,26 @@
         evt.preventDefault();
     };
 
-    var handleTouchstart = function(evt) {
+    const handleTouchstart = (evt) => {
         // Store the first Y position of the touch
         startY = evt.touches ? evt.touches[0].screenY : evt.screenY;
     };
 
-    var enable = function() {
+    const enable = ()  => {
         // Listen to a couple key touch events
         window.addEventListener('touchstart', handleTouchstart, false);
         window.addEventListener('touchmove', handleTouchmove, false);
         enabled = true;
     };
 
-    var disable = function() {
+    const disable = () => {
         // Stop listening
         window.removeEventListener('touchstart', handleTouchstart, false);
         window.removeEventListener('touchmove', handleTouchmove, false);
         enabled = false;
     };
 
-    var isEnabled = function() {
-        return enabled;
-    };
+    const isEnabled = ()  => enabled;
 
     if (isMobileDevice()) {
         enable();
